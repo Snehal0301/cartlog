@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './containers/navbar/navbar.component';
@@ -42,6 +41,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { OrderComponent } from './pages/order/order.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { AccordionModule } from 'primeng/accordion';
+import { OrderplacedComponent } from './pages/orderplaced/orderplaced.component';
 
 
 @NgModule({
@@ -64,6 +64,7 @@ import { AccordionModule } from 'primeng/accordion';
     CartComponent,
     OrderComponent,
     CheckoutComponent,
+    OrderplacedComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 <div class="checkout-container">
   <p class="checkout-title">Checkout</p>
   <div class="accordian-wrapper">
-    <p-accordion [multiple]="true" [activeIndex]="enableCheckout? [1]:[0]">
+    <p-accordion [multiple]="true" [activeIndex]="enableCheckout?[1]:[0]">
       <p-accordionTab header="Delivery Address">
         <div class="delivery-address-wrapper">
           <form class="checkout-delivery-form" (ngSubmit)="submitForm()" [formGroup]="form">
@@ -110,19 +110,19 @@
               </div>
             </div>
             <div class="button-wrapper">
-              <button [ngClass]="{'checkout-btn':!form.invalid, 'checkout-btn-disabled':(form.invalid || stateValue==='' || selectDistrict==='' )}" [disabled]="(form.invalid || stateValue==='' || selectDistrict==='')" type="submit">{{isEditMode ? 'Edit Address' :'Save and Deliver here'}}</button>
+              <button [ngClass]="{'checkout-btn':!form.invalid, 'checkout-btn-disabled':(form.invalid || stateValue==='' || selectDistrict==='' )}" [disabled]="(form.invalid || stateValue==='' || selectDistrict==='')" type="submit">{{isEditMode ? 'Edit Address' :'Save Address'}}</button>
               <button class="checkout-clear" type="button" (click)="handleFunc('cancel')">Cancel</button>
             </div>
           </form>
           <div class="saved-address-wrapper" *ngIf="allAddress.length>0">
-            <p class="saved-address-title">Saved Address</p>
+            <p class="saved-address-title">Saved Address <span *ngIf="!enableCheckout">( Please select an address )</span></p>
             <div class="all-address">
-              <div [ngClass]="{'address-item':true, 'address-item-work':item.addressType==='work','address-selected': item === selectedAddress}" (click)="handleFunc('selectAddress',item); stopPropagation($event)" *ngFor="let item of allAddress">
+              <div [ngClass]="{'address-item':true, 'address-item-work':item.addressType==='work','address-selected': item.isSelected}" (click)="handleFunc('selectAddress',item)" *ngFor="let item of allAddress.slice().reverse()">
                 <div class="address-header">
                   <p class="address-home">{{item.addressType}}</p>
                   <div class="address-controls">
-                    <i class='bx bx-edit-alt address-option' (click)="handleFunc('editAddress',item)"></i>
-                    <i class='bx bx-trash address-option' (click)="handleFunc('deleteAddress',item)"></i>
+                    <i class='bx bx-edit-alt address-option' (click)="handleFunc('editAddress',item,$event)"></i>
+                    <i class='bx bx-trash address-option' (click)="handleFunc('deleteAddress',item,$event)"></i>
                   </div>
                 </div>
                 <div class="address-section">
@@ -145,8 +145,16 @@
           </div>
         </div>
       </p-accordionTab>
-      <p-accordionTab header="Order Summary" [disabled]="!enableCheckout">
-        <app-cart [fromCheckout]="true"></app-cart>
+      <p-accordionTab header="Order Summary">
+        <div class="cart-items">
+          <app-cart [fromCheckout]="true" [enableCheckout]="enableCheckout"></app-cart>
+          <div class="block-ui" *ngIf="!enableCheckout">
+            <div class="overlay-wrapper">
+              <i class="pi pi-lock" style="font-size: 2rem"></i>
+              <p>Please Select an address</p>
+            </div>
+          </div>
+        </div>
       </p-accordionTab>
     </p-accordion>
   </div>

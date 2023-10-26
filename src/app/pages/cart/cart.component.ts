@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthGuardService } from 'src/service/auth-guard.service';
 import { CartService } from 'src/service/cart.service';
 import { CommonService } from 'src/service/common.service';
 import { RedeempointsService } from 'src/service/redeempoints.service';
@@ -29,17 +30,19 @@ export class CartComponent {
   newCartObject: any = {};
 
   @Input() fromCheckout: boolean;
+  @Input() enableCheckout: boolean;
 
   constructor(
     private pointService: RedeempointsService,
     private cartService: CartService,
     private router: Router,
-    private commonService: CommonService,
+    private authService: AuthGuardService,
     private apiService: ApiService
   ) {
     this.isChecked = false;
     this.isApplied = false;
     this.isCheckout = false;
+    this.enableCheckout = false;
     this.totalPoints = this.pointService.getPoints();
     this.discountPoints = 0;
     this.totalAmount = 0;
@@ -54,7 +57,6 @@ export class CartComponent {
     this.allCoupons = coupons;
     this.cartService.cart$.subscribe((data) => {
       this.cart = data;
-      console.log(this.cart);
       this.updateCartDetails();
     });
     if (this.fromCheckout) {
@@ -101,7 +103,7 @@ export class CartComponent {
       this.isApplied = true;
       this.finalAmount = this.finalTotal(
         this.deliveryAmount,
-        this.isChecked ?this.discountPoints:0,
+        this.isChecked ? this.discountPoints : 0,
         this.redeemDiscount
       );
     }
@@ -112,7 +114,7 @@ export class CartComponent {
       this.redeemDiscount = 0;
       this.finalAmount = this.finalTotal(
         this.deliveryAmount,
-        this.isChecked ?this.discountPoints:0,
+        this.isChecked ? this.discountPoints : 0,
         this.redeemDiscount
       );
     }
@@ -127,13 +129,10 @@ export class CartComponent {
       redeemPoints: this.discountPoints,
       finalAmount: this.finalAmount,
     };
-    // this.pointService.addPoints(this.finalAmount);
-    this.commonService.postCheckoutStatus(true);
+    this.authService.updateCheckoutStatus(true);
     this.newCartObject = { cart: this.cart, summary: summary };
-    // this.commonService.addOrder(this.newCartObject);
     this.router.navigate(['/checkout']);
     if (this.fromCheckout) {
-      this.router.navigate(['/cart']);
       this.payNow();
     }
   }
@@ -142,7 +141,7 @@ export class CartComponent {
     this.discountPoints = this.pointService.redeemPoints(this.totalAmount);
     this.finalAmount = this.finalTotal(
       this.deliveryAmount,
-      this.isChecked ?this.discountPoints:0,
+      this.isChecked ? this.discountPoints : 0,
       this.redeemDiscount
     );
   }

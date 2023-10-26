@@ -5,21 +5,26 @@ import {
   RouterStateSnapshot,
   Router,
 } from '@angular/router';
-import { CommonService } from 'src/service/common.service';
+import { AuthGuardService } from 'src/service/auth-guard.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  constructor(private commonService: CommonService, private router: Router) {}
+  isCheckout:boolean = false;
+  constructor(private authService: AuthGuardService, private router: Router) {
+    this.authService.auth$.subscribe((data) => {
+      this.isCheckout = data;
+    });
+  }
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean {
-    const isCheckout = this.commonService.getCheckoutStatus();
+    this.isCheckout = this.authService.getCheckoutStatus();
 
-    if (isCheckout) {
+    if (this.isCheckout) {
       return true;
     } else {
       this.router.navigate(['/']); // Redirect to the home page

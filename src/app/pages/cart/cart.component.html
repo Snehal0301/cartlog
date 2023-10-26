@@ -47,8 +47,8 @@
         <p class="entity-title">Total</p>
         <p class="entity-price">₹{{finalAmount}}</p>
       </div>
-      <button (click)="handleCheckout()" [ngClass]="{'checkout-btn':isCheckout,'checkout-btn-disabled':!isCheckout}"
-        [disabled]="!isCheckout">Proceed to {{fromCheckout?'Pay': 'Checkout'}}</button>
+      <button (click)="handleCheckout()" [ngClass]="{'checkout-btn':(fromCheckout ? enableCheckout || isCheckout:isCheckout),'checkout-btn-disabled':(fromCheckout ? (!enableCheckout || !isCheckout):!isCheckout)}"
+        [disabled]="(fromCheckout ? (!enableCheckout || !isCheckout):!isCheckout)">Proceed to {{fromCheckout?'Pay': 'Checkout'}}</button>
     </div>
   </div>
 </div>

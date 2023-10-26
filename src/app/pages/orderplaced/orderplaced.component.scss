@@ -1,0 +1,92 @@
+@import '../../../_variables.scss';
+
+.placed-container{
+  margin: 50px 10%;
+  display: flex;
+  gap: 100px;
+  align-items: center;
+  .placed-text{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 20px;
+    .placed-title{
+      font-size: 50px;
+      font-weight: 800;
+      width: 90%;
+    }
+    .placed-subtext{
+      font-size: 20px;
+    }
+    .placed-billing-address{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .billing-title{
+        font-size: 18px;
+        font-weight: 700;
+      }
+      .billing-wrapper{
+        display: flex;
+        flex-direction: column;
+        max-width: 500px;
+        gap: 10px;
+        .billing-section{
+          display: flex;
+          justify-content: space-between;
+          // gap: 10px;
+          .billing-value{
+            text-align: left;
+            width: 300px;
+          }
+        }
+      }
+      .all-orders{
+        background-color: $black-color;
+        color: $nav-background;
+        width: max-content;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+    }
+  }
+  .placed-reciept{
+    width: 100%;
+    .receipt {
+      // filter: drop-shadow(0 2px 1px rgba(#000, 0.1));
+      max-width: 70%;
+      margin: 0 auto;
+      $triangle-size: 10px;
+      $stop1: $triangle-size * 1.5;
+      $stop2: $triangle-size * 0.7;
+      $stop1r: $stop1 + 0.01;
+      $stop2r: $stop2 + 0.01;
+      background: 
+        // linear-gradient(135deg, transparent #{$stop1}, $nav-background #{$stop1r}) top left,
+        // linear-gradient(45deg, $nav-background #{$stop2}, transparent #{$stop2r}) top left,
+        linear-gradient(135deg, $nav-background #{$stop2}, transparent #{$stop2r}) bottom left,
+        linear-gradient(45deg, transparent #{$stop1}, $nav-background #{$stop1r}) bottom left;
+      background-repeat: repeat-x;
+      background-size: ($triangle-size * 2) $triangle-size;
+      padding: $triangle-size 0;
+      &-list {
+        background-color: $nav-background;
+        padding: 30px;
+      }
+      &-item {
+        border-bottom: 0.5px dashed #ccc;
+        line-height: 1;
+        overflow: hidden;
+        font-family: monospace;
+        font-size: 16px;
+        
+        &:not(:first-child) {
+          margin-top: 1rem;
+        }
+      }
+      &-label { float: left; }
+      &-value { float: right; }
+    }
+  }
+}

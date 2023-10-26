@@ -20,15 +20,6 @@ export class CommonService {
     // this.getAllProducts();
   }
 
-  checkoutStatus: boolean = false;
-
-  postCheckoutStatus(status: boolean) {
-    this.checkoutStatus = status;
-  }
-  getCheckoutStatus() {
-    return this.checkoutStatus;
-  }
-
   addToList(item: any, type: string, location?: string): void {
     if (type === 'wishlist') {
       item.isWishlisted = true;
@@ -78,26 +69,6 @@ export class CommonService {
     );
   }
 
-  // updateOrderFunc(category: string, id: string, updatedData: any, type:string) {
-  //   updateOrder(category, this.apiService, id, updatedData, type).subscribe(
-  //     (response) => {
-  //       console.log('order updated successfully', response);
-  //     },
-  //     (error) => {
-  //       console.error('Error in order updation:', error);
-  //     }
-  //   );
-  // }
-  // updateCart(id: string, updatedData: any) {
-  //   this.apiService.updateCart(id, updatedData).subscribe(
-  //     (response) => {
-  //       console.log('cart updated', response);
-  //     },
-  //     (error) => {
-  //       console.error('Error in order updation:', error);
-  //     }
-  //   );
-  // }
   addOrder(data: string) {
     this.apiService.addOrder(data).subscribe(
       (data) => {
@@ -160,6 +131,7 @@ export class CommonService {
   }
 
   addToCart(item: any, location?: string) {
+    item.qty = item.qty ? item.qty : 1;
     this.cartService.addToCart(item).then((result) => {
       if (result) {
         if (location !== 'order') {

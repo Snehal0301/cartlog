@@ -1,0 +1,54 @@
+<div [ngClass]="{'total-cart':true, 'removeMargin':fromCheckout}">
+  <div class="cart-list">
+    <app-order [location]="'cart'" [fromCheckout]="fromCheckout"></app-order>
+  </div>
+  <div class="cart-total" *ngIf="cart.length>0">
+    <p class="total-title" (click)="deleteAll()">Summary</p>
+    <div class="total-wrapper">
+      <div class="cart-entity">
+        <p class="entity-title">Subtotal</p>
+        <p class="entity-price">₹{{totalAmount}}</p>
+      </div>
+      <div class="cart-entity">
+        <p class="entity-title">Shipping & Delivery Fee</p>
+        <p class="entity-price">₹{{deliveryAmount}}</p>
+      </div>
+      <div class="cart-entity">
+        <div class="input-box">
+          <input type="text" placeholder="Enter Discount Code" value="{{couponValue.code}}">
+          <span><i class="pi pi-times clear" *ngIf="couponValue.code" (click)="handleCoupon({})"></i></span>
+        </div>
+        <button [ngClass]="{'apply-btn':couponValue.value,'apply-btn-disabled':!couponValue.code}" (click)="handleApply(couponValue)" [disabled]="!couponValue.code">Apply</button>
+      </div>
+      <div class="cart-coupons" *ngIf="allCoupons.length>0">
+        <div class="coupons" [class.selected]="item === couponValue" *ngFor="let item of validCoupons" (click)="handleCoupon(item)">
+          <span>{{item.code}}</span>
+          <span>{{item.value}}% OFF</span>
+        </div>
+      </div>
+      <div class="cart-entity" *ngIf="isApplied || fromCheckout">
+        <p class="entity-title">Discount Code</p>
+        <p class="entity-price">- ₹{{redeemDiscount}}</p>
+      </div>
+      <div class="cart-entity points" *ngIf="!fromCheckout" (click)="handleRedeem()">
+        <div class="entity-points">
+          <div class="point-wrapper">
+            <span>Redeem points</span>
+            <p>Apply <span>{{discountPoints}}</span> of <span>{{totalPoints}}</span> points</p>
+          </div>
+        </div>
+        <input type="checkbox" [(ngModel)]="isChecked">
+      </div>
+      <div class="cart-entity" *ngIf="isChecked || fromCheckout">
+        <p class="entity-title">Redeem Points</p>
+        <p class="entity-price">- ₹{{discountPoints}}</p>
+      </div>
+      <div class="cart-entity">
+        <p class="entity-title">Total</p>
+        <p class="entity-price">₹{{finalAmount}}</p>
+      </div>
+      <button (click)="handleCheckout()" [ngClass]="{'checkout-btn':isCheckout,'checkout-btn-disabled':!isCheckout}"
+        [disabled]="!isCheckout">Proceed to {{fromCheckout?'Pay': 'Checkout'}}</button>
+    </div>
+  </div>
+</div>

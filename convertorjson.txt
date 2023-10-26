@@ -1,0 +1,515 @@
+const data = 
+[
+  {
+    "name": "Virgin-wool crew-neck sweater with block stripes",
+    "price": 999,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 4.3,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50493900_988_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493900_988_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493900_988_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493900_988_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493900_988_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Funnel-neck sweater in a wool blend",
+    "price": 1299,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 4.0,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50502274_001_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50502274_001_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50502274_001_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50502274_001_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50502274_001_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Rollneck sweater with logo flag",
+    "price": 799,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 4.1,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50500778_001_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500778_001_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500778_001_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500778_001_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500778_001_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Mock-neck sweater with logo flag",
+    "price": 2499,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 4.5,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50500773_001_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500773_001_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500773_001_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500773_001_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500773_001_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Oversized-fit button-up cardigan with logo flag",
+    "price": 1199,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 4.2,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50502244_001_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50502244_001_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50502244_001_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50502244_001_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50502244_001_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Crew-neck sweater in stretch fabric",
+    "price": 3999,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 4.4,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50478315_383_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50478315_383_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50478315_383_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50478315_383_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50478315_383_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Slim-fit rollneck sweater in virgin wool",
+    "price": 799,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 3.9,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50478290_309_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50478290_309_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50478290_309_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50478290_309_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50478290_309_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Ribbed sweater with funnel neckline",
+    "price": 1999,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 4.3,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50478296_309_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50478296_309_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50478296_309_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50478296_309_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50478296_309_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Funnel-neck sweater in virgin wool and cashmere",
+    "price": 999,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 3.8,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50504562_041_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50504562_041_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50504562_041_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50504562_041_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50504562_041_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Crew-neck sweater with alpaca and responsible wool",
+    "price": 1499,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 4.1,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50489454_040_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50489454_040_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50489454_040_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50489454_040_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50489454_040_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Drawstring-hem logo sweater in cotton and virgin wool",
+    "price": 1299,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 4.0,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50500342_040_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500342_040_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500342_040_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500342_040_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Crew-neck sweater in stretch fabric",
+    "price": 999,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 3.7,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50478315_040_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50478315_040_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50478315_040_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50478315_040_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50478315_040_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Knitted sweater with mock neckline",
+    "price": 2999,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 4.4,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50500597_118_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953894000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500597_118_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953894000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500597_118_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953894000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500597_118_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953894000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Zip-neck sweater with logo flag",
+    "price": 799,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 3.6,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50500776_110_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953536000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500776_110_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953536000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500776_110_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953536000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500776_110_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953536000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500776_110_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953536000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "V-neck ribbed sweater with hardware-button placket",
+    "price": 1799,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 4.2,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50493904_118_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953536000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493904_118_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953536000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493904_118_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953536000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493904_118_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953536000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493904_118_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953536000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "High-neck sweater in a ribbed knit",
+    "price": 899,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 3.5,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50493851_118_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1697032748000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493851_118_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1697032748000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493851_118_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1697032748000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493851_118_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1697032748000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493851_118_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1697032748000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Ribbed-knit cardigan with button front",
+    "price": 3299,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 4.5,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50486059_661_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696968940000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50486059_661_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696968940000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50486059_661_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696968940000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50486059_661_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696968940000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50486059_661_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696968940000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Crew-neck sweater in cashmere",
+    "price": 699,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 3.7,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50493845_674_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953514000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493845_674_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953514000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493845_674_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953514000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493845_674_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953514000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493845_674_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953514000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Mock-neck sweater in virgin wool with logo flag",
+    "price": 1699,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 4.3,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50500811_663_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953514000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500811_663_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953514000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500811_663_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953514000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500811_663_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953514000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500811_663_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953514000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Rollneck sweater with mixed structures",
+    "price": 899,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 3.6,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50493844_674_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953476000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493844_674_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953476000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493844_674_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953476000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493844_674_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953476000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493844_674_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953476000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Knitted sweater with mock neckline",
+    "price": 999,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 4.3,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50500597_680_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953499000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500597_680_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953499000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500597_680_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953499000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500597_680_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953499000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Organic-cotton-blend sweater with logo badge",
+    "price": 1299,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 4.0,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50493730_534_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1697032275000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493730_534_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1697032275000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493730_534_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1697032275000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493730_534_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1697032275000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493730_534_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1697032275000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Logo-intarsia sweater in an organic-cotton blend",
+    "price": 799,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 4.1,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50493736_534_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953499000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493736_534_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953499000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493736_534_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953499000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493736_534_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953499000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493736_534_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953499000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Rollneck sweater in a cotton blend",
+    "price": 2499,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 4.5,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50500809_551_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953499000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500809_551_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953499000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500809_551_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953499000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500809_551_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953499000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Puff-sleeve sweater with horizontal stripes",
+    "price": 1199,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 4.2,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50494140_968_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953433000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50494140_968_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953433000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50494140_968_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953433000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50494140_968_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953433000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50494140_968_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953433000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Crew-neck sweater with alpaca and responsible wool",
+    "price": 3999,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 4.4,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50489454_450_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1697032275000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50489454_450_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1697032275000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50489454_450_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1697032275000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50489454_450_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1697032275000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50489454_450_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1697032275000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Rollneck sweater with mixed structures",
+    "price": 799,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 3.9,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50493844_498_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953433000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493844_498_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953433000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493844_498_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953433000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493844_498_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953433000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493844_498_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953433000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Cotton-blend sweater with logo trim",
+    "price": 1999,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 4.3,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50497500_463_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1697032275000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50497500_463_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1697032275000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50497500_463_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1697032275000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50497500_463_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1697032275000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50497500_463_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1697032275000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Knitted sweater with mock neckline",
+    "price": 999,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 3.8,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50500597_220_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953433000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500597_220_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953433000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500597_220_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953433000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50500597_220_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953433000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Alpaca-blend sweater with metallised fibres",
+    "price": 1499,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 4.1,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50493836_960_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953433000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493836_960_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953433000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493836_960_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953433000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493836_960_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953433000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493836_960_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953433000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Virgin-wool sweater",
+    "price": 1299,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 4.0,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50501575_260_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953433000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50501575_260_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953433000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50501575_260_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953433000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50501575_260_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953433000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50501575_260_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953433000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Rollneck sweater in virgin wool",
+    "price": 999,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 3.7,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50493846_260_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1697031920000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493846_260_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1697031920000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493846_260_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1697031920000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493846_260_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1697031920000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493846_260_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1697031920000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Funnel-neck sweater in virgin wool and cashmere",
+    "price": 2999,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 4.4,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50504562_118_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953407000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50504562_118_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953407000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50504562_118_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953407000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50504562_118_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953407000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50504562_118_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953407000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Open-front cardigan with buttoned pockets",
+    "price": 799,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 3.6,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50493853_118_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696952408000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493853_118_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696952408000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493853_118_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696952408000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493853_118_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696952408000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493853_118_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696952408000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "V-neck ribbed sweater with hardware-button placket",
+    "price": 1799,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 4.2,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50493904_260_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493904_260_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493904_260_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493904_260_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50493904_260_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "name": "Cropped stripe sweater with press-stud placket",
+    "price": 899,
+    "desc": "A mock-neck sweater with cropped sleeves and a block stripe by BOSS Womenswear. For our RESPONSIBLE products we always use at least 60% more sustainable raw materials. This product is made with responsibly sourced and certified wool. For us, responsibly sourced means mulesing free, and meeting the standards of the Five Freedoms of animal welfare.",
+    "rating": 3.5,
+    "images": [
+      "https://images.hugoboss.com/is/image/boss/hbeu50496472_988_350?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50496472_988_360?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50496472_988_300?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50496472_988_340?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818",
+      "https://images.hugoboss.com/is/image/boss/hbeu50496472_988_100?$re_fullPageZoom$&qlt=85&fit=crop,1&align=1,1&lastModified=1696953901000&wid=1200&hei=1818"
+    ],
+    "sizes": ["S", "M", "L", "XL"]
+  }
+]
+
+  
+  
+  function addUniqueId(jsonData) {
+      for (let key in jsonData) {
+      let index = Math.random().toString(16).slice(2);
+        jsonData[key].id = index;
+      }
+      return jsonData;
+   }
+  
+const resultObject = addUniqueId(data);
+console.log(JSON.stringify(resultObject));

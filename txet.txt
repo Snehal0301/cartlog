@@ -1,0 +1,282 @@
+"Patek 5719/10G Nautilus"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5719_10G_010_2.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5719_10G_010.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5719_10G_010_3.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5719_10G_010_6.jpg	",
+		
+"Patek 5740/1G Nautilus"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5740_1G_001_8.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5740_1G_001_1.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5740_1G_001_9.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5740_1G_001_1.jpg	",
+		
+"Patek 5990/1R Nautilus"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5990_1R_001_8.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5990_1R_001_1.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5990_1R_001_9.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5990_1R_001_10.jpg	",
+		
+"Patek 5990/1A Nautilus"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5990_1A_011_8.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5990_1A_011_1.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5990_1A_011_9.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5990_1A_011_10.jpg	",
+		
+"Patek 5980/1R Nautilus"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5980_1R_001_1.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5980_1R_001.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5980_1R_001_2.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5980_1R_001_3.jpg	",
+		
+"Patek 5980/1AR Nautilus"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5980_1AR_001_1.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5980_1AR_001.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5980_1AR_001_2.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5980_1AR_001_3.jpg	",
+"Patek 5980R Nautilus"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5980R_001_1.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5980R_001.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5980R_001_2.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5980R_001_3.jpg	",
+		
+"Patek 5726/1A Nautilus"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5726_1A_014_9.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5726_1A_014_1.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5726_1A_014_10.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5726_1A_014_11.jpg	",
+"Patek 		5726A	 Nautilus"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5726A_001_8.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5726A_001.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5726A_001_9.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5726A_001_10.jpg	",
+		
+"Patek 5712/1R Nautilus"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5712_1R_001_8.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5712_1R_001_1.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5712_1R_001_9.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5712_1R_001_10.jpg	",
+		
+"Patek 5712/1A Nautilus"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5712_1A_001_9.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5712_1A_001_1.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5712_1A_001_1.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5712_1A_001_2.jpg	",
+"Patek 5712R Nautilus"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5712R_001_1.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5712R_001_1.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5712R_001_2.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5712R_001_3.jpg	",
+"Patek 5712G Nautilus"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5712G_001_1.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5712G_001_1.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5712G_001_2.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5712G_001_3.jpg	",
+		
+"Patek 5811/1G Nautilus"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5811_1G_001_8.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5811_1G_001_1.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5811_1G_001_9.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5811_1G_001_10.jpg	",
+		
+"Patek 7118/1450R Nautilus"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1450R_001_8.jpg	",
+"https://static.patek.com/images/articles/face_white/220/7118_1450R_001_1.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1450R_001_9.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1450R_001_10.jpg	",
+		
+"Patek 7118/1450G Nautilus"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1450G_001_8.jpg	",
+"https://static.patek.com/images/articles/face_white/220/7118_1450G_001_001.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1450G_001_9.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1450G_001_10.jpg	",
+		
+"Patek 7118/1300R Nautilus"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1300R_001_8.jpg	",
+"https://static.patek.com/images/articles/face_white/220/7118_1300R_001_1.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1300R_001_9.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1300R_001_10.jpg	",
+		
+"Patek 7118/1200R Nautilus"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1200R_010_1.jpg	",
+"https://static.patek.com/images/articles/face_white/220/7118_1200R_010_010.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1200R_010_2.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1200R_010_3.jpg	",
+		
+"Patek 7118/1200R Nautilus"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1200R_001_1.jpg	",
+"https://static.patek.com/images/articles/face_white/220/7118_1200R_001_001.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1200R_001_2.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1200R_001_3.jpg	",
+		
+"Patek 7118/1200A Nautilus"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1200A_011_9.jpg	",
+"https://static.patek.com/images/articles/face_white/220/7118_1200A_011_1.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1200A_011_10.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1200A_011_11.jpg	",
+		
+"Patek 7118/1200A Nautilus"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1200A_010_9.jpg	",
+"https://static.patek.com/images/articles/face_white/220/7118_1200A_010_1.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1200A_010_10.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1200A_010_11.jpg	",
+		
+"Patek 7118/1200A Nautilus"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1200A_001_9.jpg	",
+"https://static.patek.com/images/articles/face_white/220/7118_1200A_001_1.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1200A_001_10.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1200A_001_11.jpg	",
+		
+"Patek 7118/1R Nautilus"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1R_010_8.jpg	",
+"https://static.patek.com/images/articles/face_white/220/7118_1R_010_1.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1R_010_9.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1R_010_10.jpg	",
+		
+"Patek 7118/1R Nautilus"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1R_001_8.jpg	",
+"https://static.patek.com/images/articles/face_white/220/7118_1R_001_1.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1R_001_9.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1R_001_10.jpg	",
+		
+"Patek 7118/1A Nautilus"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1A_011_1.jpg	",
+"https://static.patek.com/images/articles/face_white/220/7118_1A_011.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1A_011_3.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1A_011_4.jpg	",
+		
+"Patek 7118/1A Nautilus"
+"https://static.patek.com/videos/articles/7118_1A_010/PatekPhilippe_7118_1A_010_500.jpg	",
+"https://static.patek.com/images/articles/face_white/220/7118_1A_010.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1A_010_1.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1A_010_3.jpg	",
+		
+"Patek 7118/1A Nautilus"
+"https://static.patek.com/videos/articles/7118_1A_001/PatekPhilippe_7118_1A_001_500.jpg	",
+"https://static.patek.com/images/articles/face_white/220/7118_1A_001.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1A_001_1.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7118_1A_001_2.jpg	",
+
+
+
+
+"Patek 5261R Aquanaut"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5261R_001_8.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5261R_001_1.jpg",
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5261R_001_9.jpg	",
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5261R_001_10.jpg	",
+		
+"Patek 7968/300R Aquanaut"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/7968_300R_001_8.jpg	",
+"https://static.patek.com/images/articles/face_white/220/7968_300R_001_1.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7968_300R_001_9.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/7968_300R_001_10.jpg	",
+		
+"Patek 5062/450R Aquanaut"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5062_450R_001_1.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5062_450R_001_1.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5062_450R_001_2.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5062_450R_001_3.jpg	",
+		
+"Patek 5072R Aquanaut"
+"https://static.patek.com/videos/articles/5072R_001/PatekPhilippe_5072R_001_500.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5072R_001_1.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5072R_001_9.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5072R_001_10.jpg	",
+		
+"Patek 5268/200R Aquanaut"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5268_200R_010_8.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5268_200R_010_1.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5268_200R_010_9.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5268_200R_010_10.jpg	",
+		
+"Patek 5269/200R Aquanaut"
+"https://static.patek.com/videos/articles/5269_200R_001/PP_Aquanaut_2104_Anim_CAL245_03_500.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5269_200R_001_1.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5269_200R_001_8.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5269_200R_001_9.jpg	",
+		
+"Patek 5267/200A Aquanaut"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5267_200A_011_8.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5267_200A_011_1.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5267_200A_011_9.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5267_200A_011_10.jpg	",
+		
+"Patek 5267/200A Aquanaut"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5267_200A_010_8.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5267_200A_010_1.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5267_200A_010_9.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5267_200A_010_10.jpg	",
+		
+------ended till here-------
+"Patek 5267/200A Aquanaut"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5267_200A_001_8.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5267_200A_001_1.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5267_200A_001_9.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5267_200A_001_10.jpg	",
+		
+"Patek 5968R Aquanaut"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5968R_001_8.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5968R_001_001.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5968R_001_9.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5968R_001_10.jpg	",
+		
+"Patek 5968G Aquanaut"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5968G_010_8.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5968G_010_1.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5968G_010_9.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5968G_010_10.jpg	",
+		
+"Patek 5968G Aquanaut"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5968G_001_8.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5968G_001_1.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5968G_001_9.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5968G_001_10.jpg	",
+		
+"Patek 5968A Aquanaut"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5968A_001_8.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5968A_001_001.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5968A_001_9.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5968A_001_10.jpg	",
+		
+"Patek 5164R Aquanaut"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5164R_001_1.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5164R_001.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5164R_001_2.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5164R_001_3.jpg	",
+		
+"Patek 5164A Aquanaut"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5164A_001_8.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5164A_001.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5164A_001_9.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5164A_001_1.jpg	",
+		
+"Patek 5168G Aquanaut"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5168G_010_8.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5168G_010_1.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5168G_010_9.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5168G_010_10.jpg	",
+		
+"Patek 5168G Aquanaut"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5168G_001_8.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5168G_001.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5168G_001_9.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5168G_001_10.jpg	",
+		
+"Patek 5167/1A Aquanaut"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5167_1A_001_1.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5167_1A_001.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5167_1A_001_2.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5167_1A_001_3.jpg	",
+		
+"Patek 5167R Aquanaut"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5167R_001_1.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5167R_001.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5167R_001_2.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5167R_001_3.jpg	",
+		
+"Patek 5167A Aquanaut"
+"https://static.patek.com/images/articles/gallery_thumbnail/300/5167A_001_9.jpg	",
+"https://static.patek.com/images/articles/face_white/220/5167A_001.jpg",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5167A_001_1.jpg	",
+	"https://static.patek.com/images/articles/gallery_thumbnail/300/5167A_001_2.jpg	",
+

@@ -134,6 +134,8 @@ export class NavbarComponent {
       this.router.navigate([productUrl]);
       this.isSuggested = false;
       this.searchTerm = '';
+    }else if(type === 'linkclick'){
+      this.isDropdownOpen = false;
     }
   }
 }

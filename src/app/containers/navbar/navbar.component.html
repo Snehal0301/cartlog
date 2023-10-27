@@ -33,9 +33,10 @@
       <p-avatar icon="pi pi-user" pBadge value="4" severity="success" styleClass="mr-2" [style]="styleBadge"
       shape="circle" (click)="toggleDropdown()"></p-avatar>
       <ul class="profile-dropdown" *ngIf="isDropdownOpen">
-        <li class="dropdown-options">Profile</li>
-        <li class="dropdown-options">Orders</li>
-        <li class="dropdown-options">Address & cards</li>
+        <a routerLink="/giftcard" (click)="handleClick('linkclick')" class="dropdown-options"><li>Profile</li></a>
+        <a routerLink="/giftcard" (click)="handleClick('linkclick')" class="dropdown-options"><li>Orders & Points</li></a>
+        <a routerLink="/giftcard" (click)="handleClick('linkclick')" class="dropdown-options"><li>Address</li></a>
+        <a routerLink="/giftcard" (click)="handleClick('linkclick')" class="dropdown-options"><li>Gift Card</li></a>
       </ul>
     </div>
     <div class="wishlist-wrapper">

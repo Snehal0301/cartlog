@@ -27,27 +27,54 @@
   </div>
   <div class="placed-reciept">
     <div class="receipt">
+      <div class="style-div"></div>
       <div class="receipt-list">
-        <div class="receipt-item">
-          <div class="receipt-label">Milk</div>
-          <div class="receipt-value">0.99</div>
+        <div class="receipt-header">
+          <div class="receipt-title">Order Summary</div>
+          <div class="receipt-details">
+            <div class="receipt-detail">
+              <p class="receipt-subheading">Date</p>
+              <p class="receipt-subheading-value">02 May 2023</p>
+            </div>
+            <div class="receipt-detail">
+              <p class="receipt-subheading">Order ID</p>
+              <p class="receipt-subheading-value">CRTLG15X57895GG</p>
+            </div>
+            <div class="receipt-detail">
+              <p class="receipt-subheading">Payment Method</p>
+              <p class="receipt-subheading-value">Mastercard</p>
+            </div>
+          </div>
         </div>
-        <div class="receipt-item">
-          <div class="receipt-label">Eggs</div>
-          <div class="receipt-value">0.99</div>
+        <div class="side-curve side-curve-1"></div>
+        <div class="side-curve side-curve-2"></div>
+        <div class="receipt-body">
+          <div class="receipt-body-section">
+            <app-list-view></app-list-view>
+            <app-list-view></app-list-view>
+            <app-list-view></app-list-view>
+          </div>
+          <div class="receipt-body-section">
+            <div class="receipt-subtotal-section">
+              <div class="receipt-subtotal-item">
+                <p class="receipt-subtotal-value">Sub Total</p>
+                <p class="receipt-subtotal-value">₹0.99</p>
+              </div>
+              <div class="receipt-subtotal-item">
+                <p class="receipt-subtotal-value">Shipping</p>
+                <p class="receipt-subtotal-value">₹0.99</p>
+              </div>
+              <div class="receipt-subtotal-item">
+                <p class="receipt-subtotal-value">Tax</p>
+                <p class="receipt-subtotal-value">₹0.99</p>
+              </div>
+            </div>
+          </div>
+          <div class="receipt-order-total">
+            <p class="receipt-order-item">Order Total</p>
+            <p class="receipt-order-item">₹1000</p>
+          </div>
         </div>
-        <div class="receipt-item">
-          <div class="receipt-label">Bread</div>
-          <div class="receipt-value">0.49</div>
-        </div>
-        <div class="receipt-item">
-          <div class="receipt-label">Water</div>
-          <div class="receipt-value">0.49</div>
-        </div>
-        <div class="receipt-item">
-          <div class="receipt-label">Cereal</div>
-          <div class="receipt-value">0.99</div>
-        </div> 
       </div>
     </div>
     

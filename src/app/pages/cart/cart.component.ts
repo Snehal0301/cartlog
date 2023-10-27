@@ -155,7 +155,8 @@ export class CartComponent {
         redirect_url = '/cart';
       } else {
         this.pointService.addPoints(this.finalAmount)
-        redirect_url = '/';
+        this.authService.updateCheckoutStatus(true)
+        redirect_url = '/placed';
       }
       location.href = redirect_url;
     }

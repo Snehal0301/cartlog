@@ -42,6 +42,9 @@ import { OrderComponent } from './pages/order/order.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { AccordionModule } from 'primeng/accordion';
 import { OrderplacedComponent } from './pages/orderplaced/orderplaced.component';
+import { ListViewComponent } from './components/list-view/list-view.component';
+import { GiftcardComponent } from './pages/giftcard/giftcard.component';
+import { TabViewModule } from 'primeng/tabview';
 
 
 @NgModule({
@@ -65,6 +68,8 @@ import { OrderplacedComponent } from './pages/orderplaced/orderplaced.component'
     OrderComponent,
     CheckoutComponent,
     OrderplacedComponent,
+    ListViewComponent,
+    GiftcardComponent,
   ],
   imports: [
     BrowserModule,
@@ -86,6 +91,7 @@ import { OrderplacedComponent } from './pages/orderplaced/orderplaced.component'
     CheckboxModule,
     InfiniteScrollModule,
     AccordionModule,
+    TabViewModule
   ],
   providers: [MessageService, WishlistService, CommonService],
   bootstrap: [AppComponent],

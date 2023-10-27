@@ -1,0 +1,49 @@
+<div class="giftcard-container">
+  <div class="giftcard-title">Gift Card</div>
+  <div class="tab-wrapper">
+    <div [ngClass]="{'tab':true,'tab-active':tabState === 1}" (click)="handleFunc('tab',1)">Buy</div>
+    <div [ngClass]="{'tab':true,'tab-active':tabState === 2}" (click)="handleFunc('tab',2)">Add</div>
+  </div>
+  <div class="giftcard-wrapper" *ngIf="tabState === 1">
+    <div class="giftcard-subtitle">Choose Gift Card</div>
+    <div class="all-giftcards">
+      <div class="giftcart-single">
+        <img src="../../../assets/gift-card-1.png" alt="gift card">
+        <p class="giftcard-price">{{enteredAmount || enteredChip }}</p>
+        <p class="giftcard-date">Valid till 10 december 2025</p>
+        <p class="giftcard-code">CRTLG15ft2458YH</p>
+      </div>
+      <div class="giftcart-single">
+        <img src="../../../assets/gift-card-1.png" alt="gift card">
+        <p class="giftcard-price">{{enteredAmount || enteredChip }}</p>
+        <p class="giftcard-date">Valid till 10 december 2025</p>
+        <p class="giftcard-code">CRTLG15ft2458YH</p>
+      </div>
+      <div class="giftcart-single">
+        <img src="../../../assets/gift-card-1.png" alt="gift card">
+        <p class="giftcard-price">{{enteredAmount || enteredChip }}</p>
+        <p class="giftcard-date">Valid till 10 december 2025</p>
+        <p class="giftcard-code">CRTLG15ft2458YH</p>
+      </div>
+    </div>
+    <div class="giftcard-subtitle">Choose Amount</div>
+    <div class="all-amounts">
+      <div [ngClass]="{'amount':true,'amount-active':enteredChip===100}" (click)="handleFunc('chip',100)">₹ 100</div>
+      <div [ngClass]="{'amount':true,'amount-active':enteredChip===500}" (click)="handleFunc('chip',500)">₹ 500</div>
+      <div [ngClass]="{'amount':true,'amount-active':enteredChip===1000}" (click)="handleFunc('chip',1000)">₹ 1000</div>
+      <div [ngClass]="{'amount':true,'amount-active':enteredChip===2000}" (click)="handleFunc('chip',2000)">₹ 2000</div>
+      <div [ngClass]="{'amount':true,'amount-active':enteredChip===5000}" (click)="handleFunc('chip',5000)">₹ 5000</div>
+      <div [ngClass]="{'amount':true,'amount-active':enteredChip===7000}" (click)="handleFunc('chip',7000)">₹ 7000</div>
+      <div [ngClass]="{'amount':true,'amount-active':enteredChip===10000}" (click)="handleFunc('chip',10000)">₹ 10000</div>
+    </div>
+    <div class="giftcard-subtitle">Add custom amount</div>
+    <div class="giftcard-input">
+      <input class="giftcard-input-amount" type="number" min="100" max="10000" [(ngModel)]="enteredAmount"   placeholder="Enter Amount" (input)="handleFunc('buyAmount',$event)">
+      <p class="error" *ngIf="error">Amount should be more than 100 and less than 10000</p>
+    </div>
+    <button class="giftcard-buy">Buy now</button>
+  </div>
+  <div class="giftcard-wrapper" *ngIf="tabState === 2">
+    <p>hello</p>
+  </div>
+</div>

@@ -5,6 +5,7 @@ import { NgModel } from '@angular/forms';
 import { Router } from '@angular/router';
 import { forkJoin } from 'rxjs';
 import { CartService } from 'src/service/cart.service';
+import { RecentsearchService } from 'src/service/recentsearch.service';
 import { ApiService } from 'src/service/testapi.service';
 import { WishlistService } from 'src/service/wishlist.service';
 @Component({
@@ -29,6 +30,7 @@ export class NavbarComponent {
     | 'bottomleft'
     | 'bottomright' = 'right';
   isMobile: boolean = false;
+  isRecent: boolean = false;
   countries?: any[];
   formGroup!: FormGroup;
   filteredCountries: any[] = [];
@@ -41,6 +43,7 @@ export class NavbarComponent {
     private apiService: ApiService,
     private wishlistService: WishlistService,
     private cartService: CartService,
+    private recentService: RecentsearchService,
     private router: Router,
     private http: HttpClient,
     private el: ElementRef
@@ -48,6 +51,7 @@ export class NavbarComponent {
 
   wishlist: any;
   cart: any;
+  recent: any;
 
   ngOnInit() {
     document.addEventListener('click', this.onGlobalClick.bind(this));
@@ -59,8 +63,16 @@ export class NavbarComponent {
     this.wishlistService.wishlist$.subscribe((data) => {
       this.wishlist = data;
     });
+
     this.cartService.cart$.subscribe((data) => {
       this.cart = data;
+    });
+
+    this.recentService.recent$.subscribe((data) => {
+      this.recent = data;
+      if(this.recent.length === 0){
+        this.isRecent = false;
+      }
     });
   }
 
@@ -86,14 +98,13 @@ export class NavbarComponent {
     const womensApiUrl = `http://localhost:3004/womens?name_like=${this.searchTerm}`;
     if (this.searchTerm !== '') {
       this.isSuggested = true;
+      this.isRecent = false;
       forkJoin([
         this.http.get(mensApiUrl),
         this.http.get(womensApiUrl),
       ]).subscribe(([mensProducts, womensProducts]: any) => {
-        // Combine the results into a single array
         this.searchResult = [...mensProducts, ...womensProducts];
       });
-      console.log(this.searchResult);
     } else {
       this.isSuggested = false;
     }
@@ -129,13 +140,32 @@ export class NavbarComponent {
   handleClick(type: string, item?: any) {
     if (type === 'overlay') {
       this.isSuggested = false;
+      this.isRecent = false;
     } else if (type === 'route') {
+      this.recentService.addRecent(item).then((result)=>{
+        if(result){
+          console.log('Added to recent search');
+        }else{
+          console.log('Couldnt add to recent search');
+        }
+      });
       const productUrl = '/products/' + item.category + '/' + item.id;
       this.router.navigate([productUrl]);
       this.isSuggested = false;
+      this.isRecent = false;
       this.searchTerm = '';
     }else if(type === 'linkclick'){
       this.isDropdownOpen = false;
+    }else if(type === 'recent'){
+      this.isRecent = true;
+    }else if (type === 'recentdelete') {
+      this.recentService.deleteRecent(item.id).then((result) => {
+        if (result) {
+          console.log('Added to recent search');
+        } else {
+          console.log('Couldnt add to recent search');
+        }
+      });
     }
   }
 }

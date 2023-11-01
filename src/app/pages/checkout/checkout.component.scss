@@ -254,6 +254,17 @@
       }
       .cart-items{
         position: relative;
+        .change-something{
+          margin: 10px;
+          span{
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 18px;
+            &:hover{
+              color: $clear-color;
+            }
+          }
+        }
         .block-ui{
           display: flex;
           align-items: center;

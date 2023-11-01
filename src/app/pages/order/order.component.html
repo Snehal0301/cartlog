@@ -9,6 +9,6 @@
     <img src="../../../assets/empty-cart-1.svg" *ngIf="location === 'cart'" alt="empty wishlist">
   </div>
   <div class="content" *ngIf="data.length>0">
-    <app-product-grid [data]="data" [gridlayout]="'list'" [location]="'order'" [fromCart]="location === 'cart'"></app-product-grid>
+    <app-product-grid [data]="data" [gridlayout]="'list'" [fromCheckout]="fromCheckout" [location]="'order'" [fromCart]="location === 'cart'"></app-product-grid>
   </div>
 </div>

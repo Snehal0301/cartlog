@@ -102,6 +102,14 @@
             color: $clear-color;
           }
         }
+        .giftcard-title{
+          font-size: 20px;
+          font-weight: 600;
+          cursor: default;
+          // &:hover{
+          //   color: $clear-color;
+          // }
+        }
         .liststyle-price{
           font-weight: 600;
         }
@@ -165,6 +173,13 @@
             }
           }
         }
+        .giftcard-qty{
+          margin-bottom: 10px;
+        }
+        .fromcheckout-qty{
+          font-size: 16px;
+          font-weight: 600;
+        }
       }
       .wrapper-2{
         display: flex;
@@ -204,6 +219,12 @@
     .liststyle-section-2{
       img{
         width: 130px;
+        border-radius: 8px;
+      }
+    }
+    .giftcard-section-2{
+      img{
+        width: 300px;
         border-radius: 8px;
       }
     }

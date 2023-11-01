@@ -16,6 +16,10 @@ export class ApiService {
   private cartUrl = `${this.baseUrl}/cart`;
   private orderUrl = `${this.baseUrl}/orders`;
   private addressUrl = `${this.baseUrl}/address`;
+  private giftUrl = `${this.baseUrl}/gifts`;
+  private recentUrl = `${this.baseUrl}/recent`;
+  private walletUrl = `${this.baseUrl}/wallet`;
+  private couponUrl = `${this.baseUrl}/coupons`;
 
   constructor(private http: HttpClient) {}
 
@@ -129,22 +133,15 @@ export class ApiService {
   filterProducts(category: string, params: any): Observable<any> {
     return this.http.get(`${this.baseUrl}/${category}`, { params });
   }
-  
-  addOrder(data: any): Observable<any> {
-    return this.http.post(this.orderUrl, data);
-  }
-  getOrder():Observable<any>{
-    return this.http.get(this.orderUrl);
-  }
 
-  getAddress():Observable<any>{
+  getAddress(): Observable<any> {
     return this.http.get(this.addressUrl);
   }
-  addAddress(data:any):Observable<any>{
+  addAddress(data: any): Observable<any> {
     return this.http.post(this.addressUrl, data);
   }
 
-  deleteAddress(id:any): Observable<any>{
+  deleteAddress(id: any): Observable<any> {
     let url = this.addressUrl + `/${id}`;
     return this.http.delete(url, { observe: 'response' });
   }
@@ -154,4 +151,75 @@ export class ApiService {
     return this.http.patch(url, updateData);
   }
 
+  getOrder(): Observable<any> {
+    return this.http.get(this.orderUrl);
+  }
+  getSingleOrder(id: any): Observable<any> {
+    let url = this.orderUrl + `/${id}`;
+    return this.http.get(url);
+  }
+  addOrder(data: any): Observable<any> {
+    return this.http.post(this.orderUrl, data);
+  }
+
+  deleteOrder(id: any): Observable<any> {
+    let url = this.orderUrl + `/${id}`;
+    return this.http.delete(url, { observe: 'response' });
+  }
+
+  updateOrder(id: string, updateData: any): Observable<any> {
+    let url = this.orderUrl + '/' + id;
+    return this.http.patch(url, updateData);
+  }
+
+  getGiftCard(): Observable<any> {
+    return this.http.get(this.giftUrl);
+  }
+  addGiftCard(data: any): Observable<any> {
+    return this.http.post(this.giftUrl, data);
+  }
+
+  updateGiftCard(id: string, updateData: any): Observable<any> {
+    let url = this.giftUrl + '/' + id;
+    return this.http.patch(url, updateData);
+  }
+
+  deleteGiftCard(id: any): Observable<any> {
+    let url = this.giftUrl + `/${id}`;
+    return this.http.delete(url, { observe: 'response' });
+  }
+
+  getRecent(): Observable<any> {
+    return this.http.get(this.recentUrl);
+  }
+  addRecent(data: any): Observable<any> {
+    return this.http.post(this.recentUrl, data);
+  }
+
+  deleteRecent(id: any): Observable<any> {
+    let url = this.recentUrl + `/${id}`;
+    return this.http.delete(url, { observe: 'response' });
+  }
+
+  getWallet(): Observable<any> {
+    return this.http.get(this.walletUrl);
+  }
+  
+  addWallet(data: any): Observable<any> {
+    return this.http.post(this.walletUrl, data);
+  }
+
+  updateWallet(id: string, updateData: any): Observable<any> {
+    let url = this.walletUrl + '/' + id;
+    return this.http.patch(url, updateData);
+  }
+
+  getCoupon(): Observable<any> {
+    return this.http.get(this.couponUrl);
+  }
+  
+  updateCoupon(id: string, updateData: any): Observable<any> {
+    let url = this.couponUrl + '/' + id;
+    return this.http.patch(url, updateData);
+  }
 }

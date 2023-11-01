@@ -17,7 +17,6 @@ export const getAllProductsApi = (
 export const getFullProductsApi = (
   category: string,
   apiService: ApiService,
-  // page:number
 ): Observable<any> => {
   if (category === 'mens') {
     return apiService.getMensProduct();
@@ -34,6 +33,7 @@ export const updateCart = (
 ): Observable<any> => {
   return apiService.updateCart(id, updatedData);
 };
+
 export const getFilteredProducts = (
   apiService: ApiService,
   category:string,

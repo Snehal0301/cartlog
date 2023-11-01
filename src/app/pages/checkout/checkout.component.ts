@@ -5,8 +5,8 @@ import { CommonService } from 'src/service/common.service';
 import { allState } from 'src/utils/coupons';
 import { MessageService } from 'primeng/api';
 import { AddressService } from 'src/service/address.service';
-import { CLASS_NAME } from '@angular/flex-layout';
 import { AuthGuardService } from 'src/service/auth-guard.service';
+import { OrderService } from 'src/service/order.service';
 
 @Component({
   selector: 'app-checkout',
@@ -26,10 +26,11 @@ export class CheckoutComponent {
   isEditMode: boolean = false;
   form: FormGroup;
   initialFormData: any;
-  allAddress:any;
-  selectedAddress:any;
-  editId:any;
-  isFormChanged:boolean=false;
+  allAddress: any;
+  allOrder: any;
+  selectedAddress: any;
+  editId: any;
+  isFormChanged: boolean = false;
 
   constructor(
     private commonService: CommonService,
@@ -37,7 +38,8 @@ export class CheckoutComponent {
     private router: Router,
     private fb: FormBuilder,
     private messageService: MessageService,
-    private addressService:AddressService
+    private addressService: AddressService,
+    private orderService: OrderService
   ) {
     this.form = this.fb.group({
       name: ['', Validators.required],
@@ -48,7 +50,7 @@ export class CheckoutComponent {
       state: '',
       district: '',
       landmark: '',
-      alternatePhone: ['',Validators.pattern('^\\d{10}$')],
+      alternatePhone: ['', Validators.pattern('^\\d{10}$')],
       addressType: 'home',
     });
 
@@ -56,15 +58,24 @@ export class CheckoutComponent {
   }
   ngOnInit() {
     this.allStates = allState.states;
-    this.authService.updateCheckoutStatus(true);
-    this.router.navigate(['/checkout']);
+    let orderID = localStorage.getItem('orderIDLS') || '';
+    console.log(orderID);
+    // localStorage.setItem('orderIDLS',orderID)
+    // this.authService.updateCheckoutStatus(true);
+    // this.router.navigate(['/checkout']);
     // this.enableCheckout = JSON.parse(
     //   localStorage.getItem('enableCheckout') || 'false'
     // );
+    this.orderService.order$.subscribe((data) => {
+      this.allOrder = data;
+    });
     this.addressService.address$.subscribe((data) => {
       this.allAddress = data;
-      for(let item of this.allAddress){
-        if(item.isSelected) this.enableCheckout = true;
+      for (let item of this.allAddress) {
+        if (item.isSelected) {
+          this.selectedAddress = item;
+          this.enableCheckout = true;
+        }
       }
     });
     this.selectDistrict = '';
@@ -76,26 +87,24 @@ export class CheckoutComponent {
     });
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.authService.updateCheckoutStatus(false);
   }
-
 
   submitForm() {
     this.form.value.state = this.stateValue;
     this.form.value.district = this.selectDistrict;
     let completeAddress = {
       ...this.form.value,
-      id: this.editId
+      id: this.editId,
     };
     this.isFormChanged && this.addAddressFunc(completeAddress);
   }
 
   addAddressFunc(item: any) {
-    if(this.isEditMode){
-      this.editAddresFunc(this.editId, item)
-    }
-    else{
+    if (this.isEditMode) {
+      this.editAddresFunc(this.editId, item);
+    } else {
       item.id = Math.random().toString(16).slice(2);
       item.isSelected = false;
       this.addressService.addAdress(item).then((result) => {
@@ -143,38 +152,37 @@ export class CheckoutComponent {
     });
   }
 
-  editAddresFunc(id:string,item:any) {
-    this.addressService.updateAddress(id,item).then(
-      (result) => {
-        if (result) {
-          this.enableCheckout = false;
-          this.isStateTouched = false;
-          this.isDistrictTouched = false;
-          this.isEditMode = false;
-          this.selectDistrict = '';
-          this.stateValue = '';
-          this.form.reset(this.initialFormData);
-          this.clearForm();
-          this.messageService.clear();
-          this.messageService.add({
-            key: 'tc',
-            severity: 'success',
-            summary: 'Added',
-            detail: 'Address edited Successfully',
-          });
-        } else {
-          this.messageService.clear();
-          this.messageService.add({
-            key: 'tc',
-            severity: 'error',
-            detail: 'Couldnt edit address',
-          });
-        }
+  editAddresFunc(id: string, item: any) {
+    this.addressService.updateAddress(id, item).then((result) => {
+      if (result) {
+        this.enableCheckout = false;
+        this.isStateTouched = false;
+        this.isDistrictTouched = false;
+        this.isEditMode = false;
+        this.selectDistrict = '';
+        this.stateValue = '';
+        this.form.reset(this.initialFormData);
+        this.clearForm();
+        this.messageService.clear();
+        this.messageService.add({
+          key: 'tc',
+          severity: 'success',
+          summary: 'Added',
+          detail: 'Address edited Successfully',
+        });
+      } else {
+        this.messageService.clear();
+        this.messageService.add({
+          key: 'tc',
+          severity: 'error',
+          detail: 'Couldnt edit address',
+        });
       }
-    )
+    });
   }
 
-  clearForm(){
+
+  clearForm() {
     this.isStateTouched = false;
     this.isDistrictTouched = false;
     this.isEditMode = false;
@@ -183,40 +191,35 @@ export class CheckoutComponent {
     this.form.reset(this.initialFormData);
   }
 
-
-  handleFunc(type: string, item?: any, event?:Event) {
+  handleFunc(type: string, item?: any, event?: Event) {
     if (type === 'state') {
       this.isStateTouched = true;
       this.isStateOpen = !this.isStateOpen;
-    } 
-    else if (type === 'district') {
+    } else if (type === 'district') {
       this.isDistrictTouched = true;
       item && (this.isDistrictOpen = !this.isDistrictOpen);
-    } 
-    else if (type === 'stateSelect') {
+    } else if (type === 'stateSelect') {
       this.selectState = item;
       this.selectDistrict = '';
       this.stateValue = this.selectState.state;
-    } 
-    else if (type === 'districtSelect') {
+    } else if (type === 'districtSelect') {
       this.selectDistrict = item;
-    } 
-    else if (type === 'cancel') {
+    } else if (type === 'cancel') {
       this.clearForm();
-    }
-    else if(type==='selectAddress'){
+    } else if (type === 'selectAddress') {
       for (const address of this.allAddress) {
         address.isSelected = address === item;
-        this.addressService.updateAddress(address.id,address).then(
-          (result) => {
+        this.addressService
+          .updateAddress(address.id, address)
+          .then((result) => {
             if (result) {
               console.log('updated address');
             } else {
               console.log('Couldnt update address');
             }
-          }
-        )
+          });
       }
+      this.selectedAddress = item;
       this.enableCheckout = true;
       // this.addressService.updateAddress(item.id,item).then(
       //   (result) => {
@@ -238,8 +241,7 @@ export class CheckoutComponent {
       //     }
       //   }
       // )
-    }
-    else if(type==='editAddress'){
+    } else if (type === 'editAddress') {
       event?.stopPropagation();
       this.isEditMode = true;
       let { state, district, id, ...rest } = item;
@@ -251,8 +253,7 @@ export class CheckoutComponent {
         district: district,
         ...rest,
       });
-    }
-    else if(type==='deleteAddress'){
+    } else if (type === 'deleteAddress') {
       event?.stopPropagation();
       this.deleteAddressFunc(item.id);
     }

@@ -10,6 +10,7 @@
     flex-direction: column;
     width: 50%;
     gap: 20px;
+
     .placed-title{
       font-size: 50px;
       font-weight: 800;
@@ -42,20 +43,32 @@
         }
       }
       .all-orders{
-        background-color: $black-color;
-        color: $nav-background;
-        width: max-content;
-        padding: 10px 20px;
-        border-radius: 8px;
-        cursor: pointer;
+        display: flex;
+        gap: 10px;
+        p{
+          display: flex;
+          align-items: center;
+          background-color: $black-color;
+          color: $nav-background;
+          width: max-content;
+          padding: 10px 20px;
+          border-radius: 8px;
+          cursor: pointer;
+          i{
+            margin-right: 10px;
+          }
+        }
       }
     }
   }
   .placed-reciept{
     width: 100%;
+    position: sticky;
+    top: 0px;
+    max-height: 80vh;
+    overflow: scroll;
     .receipt {
-      // filter: drop-shadow(0 2px 1px rgba(#000, 0.1));
-      max-width: 70%;
+      max-width: 700px;
       margin: 0 auto;
       $triangle-size: 10px;
       $stop1: $triangle-size * 1.5;

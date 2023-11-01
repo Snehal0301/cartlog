@@ -27,7 +27,7 @@ export class AuthGuard implements CanActivate {
     if (this.isCheckout) {
       return true;
     } else {
-      this.router.navigate(['/']); // Redirect to the home page
+      this.router.navigate(['/cart']);
       return false;
     }
   }

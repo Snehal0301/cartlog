@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-list-view',
@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./list-view.component.scss']
 })
 export class ListViewComponent {
+
+  @Input() cartData:any;
+  constructor(){
+    
+  }
 
 }

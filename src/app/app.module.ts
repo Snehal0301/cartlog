@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms'; // Import ReactiveFormsModule
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
@@ -45,7 +45,25 @@ import { OrderplacedComponent } from './pages/orderplaced/orderplaced.component'
 import { ListViewComponent } from './components/list-view/list-view.component';
 import { GiftcardComponent } from './pages/giftcard/giftcard.component';
 import { TabViewModule } from 'primeng/tabview';
+import { DatePipe } from '@angular/common';
+import { ClipboardModule } from 'ngx-clipboard';
+import { WalletComponent } from './pages/wallet/wallet.component';
+import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
+import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
+import { LoaderComponent } from './components/loader/loader.component';
+import { LoadingInterceptor } from 'src/service/loading.interceptor';
+import { OrderlistComponent } from './pages/orderlist/orderlist.component';
+import { AddressComponent } from './pages/address/address.component';
+import { TableModule } from 'primeng/table';
+import { TagModule } from 'primeng/tag';
+
+// Export this function
+export function playerFactory(): any {
+  return import('lottie-web');
+}
 
 @NgModule({
   declarations: [
@@ -70,6 +88,10 @@ import { TabViewModule } from 'primeng/tabview';
     OrderplacedComponent,
     ListViewComponent,
     GiftcardComponent,
+    WalletComponent,
+    LoaderComponent,
+    OrderlistComponent,
+    AddressComponent,
   ],
   imports: [
     BrowserModule,
@@ -91,9 +113,25 @@ import { TabViewModule } from 'primeng/tabview';
     CheckboxModule,
     InfiniteScrollModule,
     AccordionModule,
-    TabViewModule
+    TabViewModule,
+    ClipboardModule,
+    LottieModule.forRoot({ player: playerFactory }),
+    ShareButtonsModule,
+    ShareIconsModule,
+    TableModule,
+    TagModule,
   ],
-  providers: [MessageService, WishlistService, CommonService],
+  providers: [
+    MessageService,
+    WishlistService,
+    CommonService,
+    DatePipe,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadingInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

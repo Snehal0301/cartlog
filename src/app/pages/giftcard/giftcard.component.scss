@@ -22,11 +22,6 @@
     }
   }
   .giftcard-wrapper{
-    // padding:5px 20px;
-    // background-color: $nav-background;
-    // border-top-right-radius: 8px;
-    // border-bottom-right-radius: 8px;
-    // border-bottom-left-radius: 8px;
     .giftcard-subtitle{
       font-size: 20px;
       font-weight: 600;
@@ -35,26 +30,35 @@
     .all-giftcards{
       display: flex;
       gap: 10px;
+      flex-wrap: wrap;
       .giftcart-single{
+        font-family: 'Exo 2', sans-serif;
         position: relative;
+        border-radius: 8px;
         cursor: pointer;
         img{
           width: 480px;
           // height: 50px;
         }
+        .giftcard-title-name{
+          position: absolute;
+          font-size: 25px;
+          top: 45px;
+          left: 20px;
+          font-weight: 600;
+        }
         .giftcard-price{
           position: absolute;
-          color: $giftcard-1-price;
-          top: 70px;
+          top: 75px;
           font-size: 45px;
-          left: 50px;
+          left: 20px;
+          font-weight: 700;
           // z-index: 5;
         }
         .giftcard-date{
           position: absolute;
-          top: 130px;
+          top: 140px;
           font-size: 8px;
-          color: $giftcard-1-title;
           left: 20px;
           font-weight: 600;
           text-transform: uppercase;
@@ -62,11 +66,34 @@
         .giftcard-code{
           position: absolute;
           bottom: 20px;
-          color: $giftcard-1-price;
           font-size: 15px;
           font-weight: 600;
           left: 20px;
         }
+        .giftcard-overlay{
+          position: absolute;
+          background-color: $overlay-2;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          i{
+            font-size: 30px;
+            color: white;
+          }
+          .gift-used{
+            font-size: 20px;
+            color: white;
+          }
+        }
+      }
+      .giftcart-single-selected{
+        border-color: $search-focus;
+        box-shadow: 0 0 0 0.15rem $gift-card-shadow;
       }
     }
     .all-amounts{
@@ -116,6 +143,16 @@
       padding:10px;
       margin: 20px 0;
       border-radius: 8px;
+    }
+    .giftcard-buy-disabled{
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+    .purchased{
+      .purchased-title{
+        font-size: 30px;
+        font-weight: 600;
+      }
     }
   }
 }

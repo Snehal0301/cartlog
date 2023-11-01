@@ -19,21 +19,25 @@
 
 <div class="product-liststyle-container" *ngIf="gridlayout === 'list'">
   <div class="product-liststyle" *ngFor="let item of data">
-    <div class="liststyle-section-2">
+    <div class="liststyle-section-2" *ngIf="!item.isGiftCard">
+      <img [src]="item.images[0]" alt="item.name">
+    </div>
+    <div class="giftcard-section-2" *ngIf="item.isGiftCard">
       <img [src]="item.images[0]" alt="item.name">
     </div>
     <div class="liststyle-section-1">
       <div class="wrapper-1">
-        <a [routerLink]="location !== 'productlist' ? '/products/' + item.category + '/' + item.id : item.id">
+        <a [routerLink]="location !== 'productlist' ? '/products/' + item.category + '/' + item.id : item.id" *ngIf="!item.isGiftCard">
           <div class="liststyle-title">{{item.name}}</div>
         </a>
+        <div class="giftcard-title" *ngIf="item.isGiftCard">{{item.name}}</div>
         <div class="liststyle-price">₹ {{item.price}}</div>
         <div class="liststyle-rating" *ngIf="!fromCart"><span>{{item.rating}}</span>
           <star-rating [readOnly]="true" [getHalfStarVisible]="item.rating" [step]="0.5" [showHalfStars]="true"
             [starType]="'svg'" [rating]="item.rating"></star-rating>
         </div>
         <div class="liststyle-desc" *ngIf="!fromCart">{{item.desc}}</div>
-        <div class="liststyle-cart-content" *ngIf="fromCart">
+        <div class="liststyle-cart-content" *ngIf="fromCart && !item.isGiftCard && !fromCheckout">
           <div class="liststyle-sizes">
             <div [ngClass]="currentClass(size, item)" (click)="handleFunction('size',item,size)" *ngFor="let size of item.sizes">{{size}}</div>
             <span class="warning-size" *ngIf="!item.selectedSize">Please Select Size</span>
@@ -43,8 +47,10 @@
             <div class="qty">{{item.qty || 1}}</div>
             <button class="qty-controls" (click)="handleFunction('qty',item,'+')">+</button>
           </div>
-
         </div>
+        <div class="giftcard-qty" *ngIf="item.isGiftCard">Qty: 1</div>
+        <div class="fromcheckout-qty" *ngIf="fromCheckout">Quantity: {{item.qty}}</div>
+        <div class="fromcheckout-qty" *ngIf="fromCheckout">Size: {{item.selectedSize}}</div>
       </div>
       <div class="wrapper-2">
         <div [ngClass]="{'add-to-cart-active': item.isWishlisted, 'add-to-cart': !item.isWishlisted}"
@@ -54,7 +60,7 @@
           <i class="pi pi-heart wishlist" *ngIf="!item.isWishlisted"></i>
           <i class="pi pi-heart-fill wishlist" *ngIf="item.isWishlisted"></i>
         </div>
-        <div class="add-to-cart" (click)="fromCart ? handleFunction('cart', item) : handleFunction('wishlist', item)" *ngIf="location==='order'">
+        <div class="add-to-cart" (click)="fromCart ? handleFunction('cart', item) : handleFunction('wishlist', item)" *ngIf="location==='order' && !fromCheckout">
           <i class="pi pi-trash wishlist"></i>
           <span>Remove</span>
         </div>

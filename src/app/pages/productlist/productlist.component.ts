@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { faL } from '@fortawesome/free-solid-svg-icons';
 import { ApiService } from 'src/service/testapi.service';
 import {
   getAllProductsApi,
@@ -29,7 +30,8 @@ export class ProductlistComponent {
   ratingSelectStates: { [key: string]: boolean } = {};
   sizeCheckboxStates: { [key: string]: boolean } = {};
   selectedRating: number;
-  isCleared:boolean = false;
+  isCleared: boolean = false;
+  isPriceChanged: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -77,13 +79,12 @@ export class ProductlistComponent {
   };
 
   allFilters: any = {
-    price:[this.rangeValues[0],this.rangeValues[1]],
+    price: this.calculateMinMaxPrices(this.fullProducts),
     size: [],
     rating: [],
   };
 
   updateFilters(type: string, item: any) {
-    console.log(this.rangeValues);
     if (this.allFilters[type].includes(item)) {
       this.allFilters[type] = this.allFilters[type].filter(
         (value: any) => value !== item
@@ -91,6 +92,9 @@ export class ProductlistComponent {
     } else {
       if (type === 'rating') {
         this.allFilters[type] = [item];
+      } else if (type === 'price') {
+        this.isPriceChanged = true;
+        this.allFilters.price = this.rangeValues;
       } else {
         this.allFilters[type].push(item);
       }
@@ -106,9 +110,11 @@ export class ProductlistComponent {
   clearFilters(type: string) {
     if (type === 'all') {
       this.allFilters = {
+        price: [],
         size: [],
         rating: [],
       };
+      this.isPriceChanged = false;
       this.sizeCheckboxStates = {};
       this.ratingSelectStates = {};
       this.isCleared = true;
@@ -133,7 +139,7 @@ export class ProductlistComponent {
     );
     getFullProductsApi(this.category, this.apiService).subscribe(
       (data) => {
-        this.fullProducts = [...this.fullProducts, ...data];
+        this.fullProducts = data;
         this.rangeValues = this.calculateMinMaxPrices(this.fullProducts);
       },
       (error) => {
@@ -142,26 +148,40 @@ export class ProductlistComponent {
     );
   }
 
+  getAfterClear(){
+    getAllProductsApi(this.category, this.apiService, this.page).subscribe(
+      (data) => {
+        this.products = data;
+        this.rangeValues = this.calculateMinMaxPrices(this.fullProducts);
+      },
+      (error) => {
+        console.error('Error:', error);
+      }
+    );
+    this.isCleared = false;
+  }
+
   getFilterProducts() {
-    console.log(this.isCleared);
-    const params = new HttpParams()
+    let params = new HttpParams()
       .set('rating_gte', this.allFilters.rating)
       .set('size_in', this.allFilters.size)
       .set('price_gte', this.rangeValues[0])
       .set('price_lte', this.rangeValues[1]);
-      if (!this.isCleared) {
-        getFilteredProducts(this.apiService, this.category, params).subscribe(
-          (data) => {
-            this.products = data;
-          },
-          (error) => {
-            console.log('Error', error);
-          }
-        );
-      } else {
-        this.getAllProducts();
-      }
+    if (!this.isCleared) {
+      getFilteredProducts(this.apiService, this.category, params).subscribe(
+        (data) => {
+          this.products = data;
+        },
+        (error) => {
+          console.log('Error', error);
+        }
+      );
+    } else {
+      // this.getAllProducts();
+      this.getAfterClear();
+    }
   }
+
   calculateMinMaxPrices(products: any) {
     if (products && products.length > 0) {
       const prices = products.map((product: any) => product.price);
@@ -173,6 +193,12 @@ export class ProductlistComponent {
   }
 
   loadMoreProducts(): void {
+    this.allFilters = {
+      price: [],
+      size: [],
+      rating: [],
+    };
+    this.isPriceChanged = false;
     this.page++;
     this.getAllProducts();
   }

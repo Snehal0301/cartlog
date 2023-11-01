@@ -3,16 +3,22 @@ export const coupons = [
     code: 'SAVE10',
     value: 10,
     minAmount: 1000,
+    isUsed: false,
+    id: 'b8b4e2dcbc205',
   },
   {
     code: 'BIGSAVINGS',
     value: 20,
     minAmount: 2000,
+    isUsed: false,
+    id: '8622787750f9d',
   },
   {
     code: 'SUPERDEAL',
     value: 30,
     minAmount: 5000,
+    isUsed: false,
+    id: '6216ffcee2943',
   },
 ];
 

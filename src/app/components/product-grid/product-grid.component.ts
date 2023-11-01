@@ -17,15 +17,17 @@ export class ProductGridComponent {
   @Input() gridlayout: any;
   @Input() location: any;
   @Input() fromCart: boolean;
+  @Input() fromCheckout: boolean;
 
   constructor(
     private commonService: CommonService,
-    private cartService:CartService,
+    private cartService: CartService,
     private router: Router
   ) {
     this.data;
     this.gridlayout = 'grid';
     this.fromCart = false;
+    this.fromCheckout = false;
   }
 
   ngOnInit() {

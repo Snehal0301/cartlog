@@ -147,7 +147,8 @@
       </p-accordionTab>
       <p-accordionTab header="Order Summary">
         <div class="cart-items">
-          <app-cart [fromCheckout]="true" [enableCheckout]="enableCheckout"></app-cart>
+          <p class="change-something">Want to change something <a routerLink="/cart"><span>goto cart</span></a></p>
+          <app-cart [fromCheckout]="true" [selectedAddress]="selectedAddress" [enableCheckout]="enableCheckout"></app-cart>
           <div class="block-ui" *ngIf="!enableCheckout">
             <div class="overlay-wrapper">
               <i class="pi pi-lock" style="font-size: 2rem"></i>

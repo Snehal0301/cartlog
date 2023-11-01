@@ -3,14 +3,14 @@
     <div class="productlist-section">
       <div class="filter-wrapper main-filter">
         <p class="productlist-title">Filters</p>
-        <p class="productlist-clear" (click)="clearFilters('all')" *ngIf="allFilters.size.length || allFilters.rating.length">Clear all</p>
+        <p class="productlist-clear" (click)="clearFilters('all')" *ngIf="isPriceChanged|| allFilters.size.length || allFilters.rating.length">Clear all</p>
       </div>
-      <div class="filter-chips" *ngIf="allFilters.size.length || allFilters.rating.length">
+      <div class="filter-chips" *ngIf="allFilters.price.length || allFilters.size.length || allFilters.rating.length">
         <div class="filter-chip" *ngFor="let item of allFilters.size">
           <span>{{item}}</span>
           <!-- <i class="pi pi-times"></i> -->
         </div>
-        <div class="filter-chip">
+        <div class="filter-chip" *ngIf="isPriceChanged">
           <span>{{allFilters.price[0]+' to '+allFilters.price[1]}}</span>
           <!-- <i class="pi pi-times"></i> -->
         </div>

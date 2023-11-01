@@ -5,7 +5,10 @@ import { ActivatedRoute } from '@angular/router';
 import { CommonService } from 'src/service/common.service';
 import { Subscription } from 'rxjs';
 import { CartService } from 'src/service/cart.service';
-
+import { AnimationItem } from 'lottie-web';
+import { AnimationOptions } from 'ngx-lottie';
+import { Location } from '@angular/common';
+import { ClipboardService } from 'ngx-clipboard';
 @Component({
   selector: 'app-single-product',
   templateUrl: './single-product.component.html',
@@ -17,19 +20,22 @@ export class SingleProductComponent {
   imgValue: any = '';
   selectedSize: any = '';
   singleProductData: any;
-  toast: boolean = false;
+  visible: boolean = false;
   id: string | null;
   isHalfStar: boolean;
   category: any;
+  shareUrl: string = '';
 
   private routeSubscription: Subscription;
 
   constructor(
     private apiService: ApiService,
-    // private messageService: MessageService,
+    private messageService: MessageService,
     private route: ActivatedRoute,
     private commonService: CommonService,
-    private cartService: CartService
+    private cartService: CartService,
+    private location: Location,
+    private clipboardService: ClipboardService
   ) {
     this.counterValue = 1;
     this.id = '';
@@ -69,9 +75,16 @@ export class SingleProductComponent {
   }
 
   ngOnInit() {
-    window.scroll(0,0)
+    window.scroll(0, 0);
+    this.shareUrl = 'http://localhost:4200' + this.location.path();
   }
 
+  options: AnimationOptions = {
+    path: 'https://lottie.host/7903f70b-6b05-4fa5-b3d8-05002d155d11/ZaCTa1fekh.json',
+  };
+  // onAnimate(animationItem: AnimationItem): void {
+  //   console.log(animationItem);
+  // }
   ngOnDestroy() {
     if (this.routeSubscription) {
       this.routeSubscription.unsubscribe();
@@ -88,7 +101,7 @@ export class SingleProductComponent {
       ? 'singleImage-border'
       : 'singleImage-default';
   }
-  handleFunction(type: string, value?: string, item?:any) {
+  handleFunction(type: string, value?: string, item?: any) {
     if (type === 'size') {
       this.selectedSize = value;
     } else if (type === 'image') {
@@ -104,7 +117,7 @@ export class SingleProductComponent {
       }
       // this.commonService.addToCart(item);
     } else if (type === 'cart') {
-      if (this.singleProductData.isAddtoCart) {
+      if (this.singleProductData?.isAddtoCart) {
         this.commonService.removeList(this.singleProductData, type);
       } else {
         this.singleProductData.qty = this.counterValue;
@@ -112,11 +125,22 @@ export class SingleProductComponent {
         this.commonService.addToList(this.singleProductData, type);
       }
     } else if (type === 'wishlist') {
-      if (this.singleProductData.isWishlisted) {
+      if (this.singleProductData?.isWishlisted) {
         this.commonService.removeList(this.singleProductData, type);
       } else {
         this.commonService.addToList(this.singleProductData, type);
       }
+    } else if (type === 'share') {
+      this.visible = true;
+    } else if(type === 'copy'){
+      this.clipboardService.copyFromContent(this.shareUrl);
+      this.messageService.clear();
+      this.messageService.add({
+        key: 'tc',
+        severity: 'success',
+        summary: 'Copied',
+        detail: 'Link copied',
+      });
     }
   }
 }

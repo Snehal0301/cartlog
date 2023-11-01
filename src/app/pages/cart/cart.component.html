@@ -45,27 +45,37 @@
         <p class="entity-title">Redeem Points</p>
         <p class="entity-price">- ₹{{discountPoints}}</p>
       </div>
-      <!-- <div class="cart-entity points" *ngIf="!fromCheckout && !onlyGiftCard" (click)="handleRedeem()">
+      <div class="cart-entity points" *ngIf="!fromCheckout && walletBalance>0" (click)="handleWallet()">
         <div class="entity-points">
           <div class="point-wrapper">
             <span>Wallet</span>
-            <p>Use <span>{{discountPoints}}</span> of <span>{{totalPoints}}</span> points</p>
+            <p>Available balance <span>{{walletBalance}}</span></p>
           </div>
         </div>
-        <input type="checkbox" [(ngModel)]="isChecked">
+        <input type="checkbox" [(ngModel)]="useWallet">
       </div>
-      <div class="cart-entity" *ngIf="isChecked || fromCheckout ">
+      <div class="cart-entity" *ngIf="useWallet || fromCheckout">
         <p class="entity-title">Wallet</p>
-        <p class="entity-price">- ₹{{discountPoints}}</p>
-      </div> -->
+        <p class="entity-price">- ₹{{partialPayment}}</p>
+      </div>
       <div class="cart-entity">
         <p class="entity-title">Total</p>
         <p class="entity-price">₹{{finalAmount}}</p>
       </div>
       <button (click)="handleCheckout()"
         [ngClass]="{'checkout-btn':(fromCheckout ? enableCheckout || isCheckout:isCheckout),'checkout-btn-disabled':(fromCheckout ? (!enableCheckout || !isCheckout):!isCheckout)}"
-        [disabled]="(fromCheckout ? (!enableCheckout || !isCheckout):!isCheckout)">Proceed to {{fromCheckout?'Pay':
-        'Checkout'}}</button>
+        [disabled]="(fromCheckout ? (!enableCheckout || !isCheckout):!isCheckout)">
+        Proceed to {{fromCheckout?'Pay':'Checkout'}}
+        <span class="loader" *ngIf="isLoader"></span>
+      </button>
     </div>
   </div>
+  <p-dialog [(visible)]="isZeroAmount" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false"
+    [resizable]="false">
+    <div class="payment-show-wrapper">
+      <ng-lottie [options]="isSuccess?success:options">
+      </ng-lottie>
+    </div>
+    <p class="payment-show-text">{{isSuccess? 'Your Order Was Successfully Placed!': 'Please wait your order is being processed'}}</p>
+  </p-dialog>
 </div>

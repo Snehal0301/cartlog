@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectorRef } from '@angular/core';
 import ShortUniqueId from 'short-unique-id';
 
 import { ActivatedRoute, Router } from '@angular/router';
@@ -11,6 +11,8 @@ import { ApiService } from 'src/service/testapi.service';
 import { coupons } from 'src/utils/coupons';
 import { CouponService } from 'src/service/coupon.service';
 import { DatePipe } from '@angular/common';
+import { WalletService } from 'src/service/wallet.service';
+import { AnimationOptions } from 'ngx-lottie';
 
 declare var Razorpay: any;
 @Component({
@@ -22,18 +24,27 @@ export class CartComponent {
   isChecked: boolean;
   isApplied: boolean;
   isCheckout: boolean;
+  useWallet: boolean;
   onlyGiftCard: boolean;
+  isLoader: boolean;
+  isSuccess: boolean;
   totalPoints: number;
   discountPoints: number;
   redeemDiscount: number;
   deliveryAmount: number;
   totalAmount: number;
   finalAmount: number;
+  partialPayment: number;
+  isZeroAmount: boolean;
+  isNavigate: boolean;
+  zeroAmountText: string;
   orderID: any;
   orderIDLS: any;
   cart: any;
   allCoupons: any;
   allOrder: any;
+  walletBalance: any;
+  walletData: any;
   singleOrderData: any;
   validCoupons: any[];
   couponValue: any = {};
@@ -52,16 +63,24 @@ export class CartComponent {
     private couponService: CouponService,
     private apiService: ApiService,
     private orderService: OrderService,
+    private walletService: WalletService,
     private route: ActivatedRoute,
+    private cdr: ChangeDetectorRef
   ) {
     this.isChecked = false;
     this.isApplied = false;
     this.isCheckout = false;
+    this.useWallet = false;
+    this.isLoader = false;
     this.enableCheckout = false;
+    this.isNavigate = false;
+    this.isSuccess = false;
+    this.isZeroAmount = false;
     this.totalPoints = this.pointService.getPoints();
     this.discountPoints = 0;
     this.totalAmount = 0;
     this.finalAmount = 0;
+    this.partialPayment = 0;
     this.orderID;
     this.orderIDLS;
     this.deliveryAmount = 0;
@@ -69,6 +88,7 @@ export class CartComponent {
     this.validCoupons = [];
     this.fromCheckout = false;
     this.onlyGiftCard = false;
+    this.zeroAmountText = '';
 
     this.route.paramMap.subscribe((params) => {
       this.orderID = params.get('order');
@@ -77,20 +97,25 @@ export class CartComponent {
   ngOnInit() {
     window.scrollTo(0, 0);
     // this.fetchCoupons();
-    // this.allCoupons = coupons;
-    this.couponService.coupon$.subscribe((data) => {
-      this.allCoupons = data;
-    });
+    this.allCoupons = coupons;
+    // this.couponService.coupon$.subscribe((data) => {
+    //   this.allCoupons = data;
+    // });
     this.cartService.cart$.subscribe((data) => {
       this.cart = data;
       this.updateCartDetails();
-      if(this.cart.length === 0){
-        this.orderService.deleteorder(this.orderIDLS)
-        localStorage.removeItem('orderIDLS')
+      if (this.cart.length === 0) {
+        this.orderService.deleteorder(this.orderIDLS);
+        localStorage.removeItem('orderIDLS');
       }
     });
     this.orderService.order$.subscribe((data) => {
       this.allOrder = data;
+    });
+    this.walletService.wallet$.subscribe((data) => {
+      this.walletData = data[0];
+      this.walletBalance = data[0]?.value;
+      console.log(this.walletData);
     });
     this.orderIDLS = localStorage.getItem('orderIDLS');
     if (this.fromCheckout) {
@@ -98,9 +123,17 @@ export class CartComponent {
     }
   }
 
+  options: AnimationOptions = {
+    // path: 'https://lottie.host/7faa9749-70ca-48cf-b1c2-80d6422b970a/AquSQMeaVt.json',
+    // path: 'https://lottie.host/b6b35abc-0f9c-4099-9928-65f812770f0f/Zw8VBa7xxW.json',
+    path: 'https://lottie.host/1f68952b-b94f-4691-ac8b-0b5ff464637e/IPbLIC1A0M.json',
+  };
+  success: AnimationOptions = {
+    path: 'https://lottie.host/e152021c-176a-4b02-b9b2-67bb342b9375/FGaBfMiwPf.json',
+  };
+
   updateCartDetails() {
     this.totalAmount = this.cartTotal();
-    // this.deliveryAmount = this.totalAmount > 1000 ? 0 : 49;
     let productAmnt = this.productTotal();
     let giftAmnt = this.giftTotal();
     this.deliveryAmount = 0;
@@ -136,14 +169,14 @@ export class CartComponent {
     );
     this.handleCoupon({});
     this.isChecked = false;
+    this.useWallet = false;
   }
 
   deleteAll() {
-    this.cartService.deleteAll(this.cart);
+    // this.cartService.deleteAll(this.cart);
   }
 
   handleApply(item: any) {
-    console.log(this.couponValue);
     if (Object.keys(item).length === 0) {
     }
     if (this.totalAmount > item.minAmount) {
@@ -170,13 +203,50 @@ export class CartComponent {
     this.couponValue = coupon;
   }
 
+  handleZeroPayment():Promise<boolean> {
+    this.isLoader = true;
+    return new Promise <boolean>((resolve, reject)=>{
+      setTimeout(() => {
+        this.isLoader = false;
+        this.isZeroAmount = true;
+        setTimeout(() => {
+          this.isSuccess = true;
+          this.cdr.detectChanges();
+        }, 3000);
+        setTimeout(()=>{
+          localStorage.removeItem('orderIDLS');
+          let updatedOrder = this.singleOrderData;
+          updatedOrder.status = 'Success';
+          this.editOrder(this.orderID, updatedOrder);
+          this.walletBalance = this.walletBalance - this.partialPayment;
+          let wallet = {
+            id:this.walletData.id,
+            value: this.walletBalance
+          }
+          this.walletService.updateWallet(this.walletData.id,wallet);
+          this.isZeroAmount = false;
+          this.isSuccess = false;
+          resolve(true);
+        },7000)
+      }, 2000);
+    })
+  }
+  
   handleCheckout() {
     if (this.fromCheckout) {
       this.singleOrderData.address = this.selectedAddress;
       const today = new Date();
       this.singleOrderData.date = this.datePipe.transform(today, 'dd MMM yyyy');
       this.editOrder(this.orderIDLS, this.singleOrderData);
-      this.payNow();
+      if (this.finalAmount > 0) {
+        this.payNow();
+      } else {
+        this.handleZeroPayment().then((response)=>{
+          if(response){
+            this.router.navigate(['/placed', this.orderID]);
+          }
+        });
+      }
     } else {
       const summary = {
         subtotal: this.totalAmount,
@@ -186,6 +256,8 @@ export class CartComponent {
         redeemPoints: this.discountPoints,
         finalAmount: this.finalAmount,
         isChecked: this.isChecked,
+        useWallet: this.useWallet,
+        partialPayment: this.partialPayment,
       };
       if (this.orderIDLS) {
         let updatedOrder = {
@@ -202,56 +274,25 @@ export class CartComponent {
     // this.router.navigate(['/checkout', this.orderID]);
   }
 
-  // handleCheckout() {
-  //   if (this.fromCheckout) {
-  //     this.payNow();
-  //   } else {
-  //     const summary = {
-  //       subtotal: this.totalAmount,
-  //       shipping: this.deliveryAmount,
-  //       couponsDiscount: this.redeemDiscount,
-  //       couponCode: this.couponValue.code,
-  //       redeemPoints: this.discountPoints,
-  //       finalAmount: this.finalAmount,
-  //       isChecked: this.isChecked,
-  //     };
-  //     // const uid = new ShortUniqueId({
-  //     //   dictionary: 'alphanum_upper',
-  //     //   length: 11,
-  //     // });
-  //     // this.newCartObject = {
-  //     //   cart: this.cart,
-  //     //   summary: summary,
-  //     //   id: `ORD` + uid.rnd(),
-  //     // };
-  //     this.orderID = this.newCartObject.id;
-  //     // this.orderService.addOrder(this.newCartObject).then((result) => {
-  //     //   if (result) {
-  //     //     console.log('added order');
-  //     //   } else {
-  //     //     console.log('error in adding order');
-  //     //   }
-  //     // });
-  //     if (this.orderID) {
-  //       let updatedOrder = {
-  //         cart: this.cart,
-  //         summary: summary,
-  //       };
-  //       this.editOrder(this.orderID, updatedOrder);
-  //     } else {
-  //       this.addOrder(summary);
-  //     }
-  //     // console.log(this.couponValue);
-  //     // const selectedCoupon = coupons.find(
-  //     //   (coupon: any) => coupon.code === this.couponValue.code
-  //     // );
-  //     // if (selectedCoupon && !selectedCoupon.isUsed) {
-  //     //   selectedCoupon.isUsed = true;
-  //     // }
-  //     this.authService.updateCheckoutStatus(true);
-  //     this.router.navigate(['/checkout', this.orderID]);
-  //   }
-  // }
+  handleWallet() {
+    this.useWallet = !this.useWallet;
+    if (this.walletBalance >= this.finalAmount) {
+      // Wallet balance is sufficient to cover the full purchase amount
+      this.partialPayment = this.finalAmount;
+    } else {
+      // Wallet balance is insufficient; deduct the wallet balance
+      this.partialPayment = this.walletBalance;
+    }
+    this.finalAmount = this.finalTotal(
+      this.deliveryAmount,
+      this.isChecked ? this.discountPoints : 0,
+      this.redeemDiscount,
+      this.useWallet ? this.partialPayment : 0
+    );
+    // console.log(this.partialPayment);
+
+    // const remainingAmount = this.finalAmount - this.partialPayment;
+  }
 
   handleRedeem() {
     this.isChecked = !this.isChecked;
@@ -279,11 +320,10 @@ export class CartComponent {
     if (
       typeof response.razorpay_payment_id == 'undefined' ||
       response.razorpay_payment_id === null
-    ) 
-    // if (
-    //   simulateFailure
-    // ) 
-    {
+    ) {
+      // if (
+      //   simulateFailure
+      // )
       let updatedOrder = this.singleOrderData;
       updatedOrder.status = 'Failed';
       this.editOrder(this.orderID, updatedOrder);
@@ -295,7 +335,13 @@ export class CartComponent {
       localStorage.removeItem('orderIDLS');
       let updatedOrder = this.singleOrderData;
       updatedOrder.status = 'Success';
-      this.editOrder(this.orderID, updatedOrder)
+      this.editOrder(this.orderID, updatedOrder);
+      this.walletBalance = this.walletBalance - this.partialPayment;
+      let wallet = {
+        id: this.walletData.id,
+        value: this.walletBalance,
+      };
+      this.walletService.updateWallet(this.walletData.id, wallet);
       // this.editCoupon(this.couponValue.id, updatedCoupon);
       redirect_url = `/placed/${this.orderID}`;
     }
@@ -392,6 +438,9 @@ export class CartComponent {
         this.discountPoints = this.singleOrderData.summary.isChecked
           ? this.singleOrderData.summary.redeemPoints
           : 0;
+        this.partialPayment = this.singleOrderData.summary.useWallet
+          ? this.singleOrderData.summary.partialPayment
+          : 0;
       },
       (error) => {
         console.error('Error:', error);
@@ -423,13 +472,15 @@ export class CartComponent {
   finalTotal(
     deliveryPoints: number,
     redeemPoints?: number,
-    couponPoints?: number
+    couponPoints?: number,
+    walletDeduction?: number
   ): number {
     return Math.ceil(
       this.totalAmount +
         deliveryPoints -
         (redeemPoints || 0) -
-        (couponPoints || 0)
+        (couponPoints || 0) -
+        (walletDeduction || 0)
     );
   }
 }

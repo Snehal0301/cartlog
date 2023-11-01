@@ -1,6 +1,6 @@
 <div class="orderlist-container">
   <div class="orderlist-title">All Orders <i class="pi pi-tag"></i></div>
-  <div class="orderlist-body">
+  <div class="orderlist-body" *ngIf="allOrder.length>0">
     <p-table
       #dt1
       [value]="allOrder.slice().reverse()"
@@ -56,6 +56,9 @@
       </ng-template>
     </p-table>
   </div>
+  <div *ngIf="allOrder.length===0">
+    Nothing here
+  </div>
   <p-dialog header="Order Details" [(visible)]="visible" [modal]="true" [style]="{ width: '70vw' }" [draggable]="false"
     [resizable]="false">
     <div class="order-detail-container">
@@ -81,7 +84,7 @@
           <div class="order-address-wrapper">
             <p class="order-address-field">Address</p>
             <p class="order-address-value">{{singleOrder?.address?.locality}}, {{singleOrder?.address?.address}}, {{singleOrder?.address?.district}},
-            {{singleOrder?.address?.state}}, {{singleOrder?.address?.landmark}}, {{singleOrder?.address?.pincode}}</p>
+            {{singleOrder?.address?.state}}, {{singleOrder?.address?.landmark && singleOrder?.address?.landmark}}, {{singleOrder?.address?.pincode}}</p>
           </div>
           <div class="order-address-wrapper">
             <p class="order-address-field">Address Type</p>

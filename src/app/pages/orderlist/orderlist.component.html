@@ -40,7 +40,7 @@
           <td><span class="order-id" (click)="showDialog(item)">{{ item.id }}</span></td>
           <td>
             <img [src]="item.cart[0].images[0]" alt="" class="td-img">
-            <span class="more-item" *ngIf="item.cart.length>1">+{{item.cart.length-1}} more</span>
+            <span class="more-item" *ngIf="item.cart.length>1">+{{item.cart.length-1}}</span>
           </td>
           <td>{{ item.date }}</td>
           <td><p-tag [value]="item.status" [severity]="getSeverity(item.status)"></p-tag></td>
@@ -59,7 +59,7 @@
   <div *ngIf="allOrder.length===0">
     Nothing here
   </div>
-  <p-dialog header="Order Details" [(visible)]="visible" [modal]="true" [style]="{ width: '70vw' }" [draggable]="false"
+  <p-dialog header="Order Details" [(visible)]="visible" [breakpoints]="{ '960px': '95vw' }" [modal]="true" [style]="{ width: '70vw' }" [draggable]="false"
     [resizable]="false">
     <div class="order-detail-container">
       <div class="order-section-1">

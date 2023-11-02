@@ -39,8 +39,8 @@ const routes: Routes = [
   { path: 'wallet', component: WalletComponent  },
   { path: 'orders', component: OrderlistComponent  },
   { path: 'address', component: AddressComponent  },
-  { path: 'checkout/:order', component: CheckoutComponent, canActivate: [AuthGuard] },
-  // { path: 'checkout/:order', component: CheckoutComponent},
+  // { path: 'checkout/:order', component: CheckoutComponent, canActivate: [AuthGuard] },
+  { path: 'checkout/:order', component: CheckoutComponent},
   { path: 'notFound', component: NotfoundComponent },
   { path: '**', redirectTo: '/notFound' },
 ];

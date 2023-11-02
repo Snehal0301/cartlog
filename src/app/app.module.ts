@@ -59,6 +59,7 @@ import { OrderlistComponent } from './pages/orderlist/orderlist.component';
 import { AddressComponent } from './pages/address/address.component';
 import { TableModule } from 'primeng/table';
 import { TagModule } from 'primeng/tag';
+import { SidebarModule } from 'primeng/sidebar';
 
 // Export this function
 export function playerFactory(): any {
@@ -120,6 +121,7 @@ export function playerFactory(): any {
     ShareIconsModule,
     TableModule,
     TagModule,
+    SidebarModule
   ],
   providers: [
     MessageService,

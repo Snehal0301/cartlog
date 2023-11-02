@@ -99,6 +99,7 @@
     .all-amounts{
       display: flex;
       gap: 10px;
+      flex-wrap: wrap;
       .amount{
         border: 1px solid $black-color;
         border-radius: 8px;
@@ -152,6 +153,53 @@
       .purchased-title{
         font-size: 30px;
         font-weight: 600;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .giftcard-container{
+    margin: 50px 5%;
+    .giftcard-wrapper{
+      .all-giftcards{
+        .giftcart-single{
+          img{
+            width: 450px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .giftcard-container{
+    margin: 50px 5%;
+    .giftcard-wrapper{
+      .all-giftcards{
+        .giftcart-single{
+          img{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 425px) {
+  .giftcard-container{
+    margin: 50px 5%;
+    .giftcard-wrapper{
+      .all-giftcards{
+        .giftcart-single{
+          .giftcard-title-name{
+            top: 25px;
+          }
+          .giftcard-price{
+            top: 75px;
+            font-size: 15px;
+          }
+        }
       }
     }
   }

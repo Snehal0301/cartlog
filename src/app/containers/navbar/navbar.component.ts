@@ -123,18 +123,13 @@ export class NavbarComponent {
   rightsheetStyle: any = {
     width: '500px',
     height: '100vh',
-    maxHeight: '100%',
+    maxHeight: '100vh',
     margin: '0',
-    paddingBottom: '80px',
+    // paddingBottom: '80px',
   };
 
   openCart() {
     this.isCartOpen = true;
-  }
-
-  navigateToCart() {
-    this.router.navigate(['/cart']);
-    this.isCartOpen = false;
   }
 
   handleClick(type: string, item?: any) {
@@ -156,7 +151,10 @@ export class NavbarComponent {
       this.searchTerm = '';
     }else if(type === 'linkclick'){
       this.isDropdownOpen = false;
-    }else if(type === 'recent'){
+    }else if(type === 'sidebarClick'){
+      this.isCartOpen = false;
+    }
+    else if(type === 'recent'){
       this.isRecent = true;
     }else if (type === 'recentdelete') {
       this.recentService.deleteRecent(item.id).then((result) => {

@@ -2,7 +2,7 @@
 
 .total-cart{
   display: flex;
-  margin: 20px 10%;
+  margin: 50px 10%;
   gap: 30px;
   .cart-list{
     flex: 3;
@@ -194,4 +194,15 @@
 
 .removeMargin{
   margin: unset;
+}
+
+@media screen and (max-width: 1024px) {
+  .total-cart{
+    margin: 50px 5% !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .total-cart{
+    flex-direction: column;
+  }
 }

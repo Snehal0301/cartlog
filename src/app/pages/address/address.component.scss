@@ -271,3 +271,31 @@
       }
     }
 }
+
+@media screen and (max-width: 768px) {
+  .delivery-address-wrapper{
+    flex-direction: column;
+    .checkout-delivery-form{
+      width: 100% !important;
+    }
+    .saved-address-wrapper{
+      width: 100% !important;
+    }
+  }
+  
+}
+@media screen and (max-width: 425px) {
+  .delivery-address-wrapper{
+    flex-direction: column;
+    .checkout-delivery-form{
+      .address-type{
+        .address-wrapper{
+          .address{
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  
+}

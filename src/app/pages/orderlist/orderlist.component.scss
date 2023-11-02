@@ -132,3 +132,28 @@
     }
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .orderlist-container{
+    .order-detail-container{
+      flex-direction: column;
+      .order-section-1{
+        position: unset;
+        top: unset;
+        overflow: unset;
+        height: unset;
+        width: 100%;
+        .cart-item{
+          width: 100%;
+        }
+      }
+      .order-section-2{
+        .order-section-wrapper{
+          .order-section-subitem{
+            font-size: 12px;
+          }
+        } 
+      } 
+    }
+  }
+}

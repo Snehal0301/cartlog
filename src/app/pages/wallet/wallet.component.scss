@@ -24,6 +24,7 @@
     .all-amounts {
       display: flex;
       gap: 10px;
+      flex-wrap: wrap;
 
       .amount {
         border: 1px solid $black-color;

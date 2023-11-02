@@ -23,7 +23,7 @@
       <div class="autosuggestion-section" *ngIf="isRecent && recent.length>0">
         <ul class="autosuggestion-lists">
           <p class="recent">Recently Searched</p>
-          <li class="autosuggestion-item" *ngFor="let item of recent">
+          <li class="autosuggestion-item" *ngFor="let item of recent.slice().reverse()">
             <a (click)="handleClick('route',item)">
               <img [src]="item.images[0]" alt="" class="search-img">
               <p>{{item.name}}</p>
@@ -75,22 +75,41 @@
   </div>
 
   <!-- Slider -->
-  <!-- <div class="slider">
-    <p-dialog header="Cart Items" [(visible)]="isCartOpen" [modal]="true" [style]="rightsheetStyle" [draggable]="false"
+  <div class="slider">
+    <p-dialog [(visible)]="isCartOpen" [modal]="true" [style]="rightsheetStyle" [draggable]="false"
       [resizable]="false" [position]="position">
-      <div class="empty-cart" *ngIf="cart.length === 0">
-        <p>Your Cart is Empty</p>
-        <img src="../../../assets/empty-cart-1.svg" alt="">
-      </div>
-      <div class="item-cart" *ngIf="cart.length > 0">
-        <p (click)="navigateToCart()">Go to Cart</p>
-        <app-product-grid [data]="cart" gridlayout="list" [location]="'order'" [fromCart]="true"></app-product-grid>
-      </div>
-      <div class="cart-total">
-        <p (click)="cartTotal()">Cart total : <span>₹ {{totalCartValue}}</span></p>
-        <button *ngIf="totalCartValue>0" [disabled]="totalCartValue===0">Buy</button>
-      </div>
+      <ul class="sidebar-wrapper">
+        <!-- <a routerLink="wishlist">
+          <div class="wishlist-wrapper">
+            <p-avatar icon="pi pi-heart" pBadge value="4" severity="success" styleClass="mr-2" [style]="styleBadge" shape="circle"></p-avatar>
+            <span *ngIf="wishlist.length">{{wishlist.length}}</span>
+          </div>
+        </a> -->
+        <!-- <a routerLink="/cart">
+          <p-avatar icon="pi pi-cart-plus" pBadge value="4" severity="success" styleClass="mr-2" [style]="styleBadge"
+          shape="circle"></p-avatar>
+          <span *ngIf="cart.length>0">{{cart.length}}</span>
+        </a> -->
+        <a routerLink="/wishlist" (click)="handleClick('sidebarClick')" class="sidebar-options">
+          <li><i class="pi pi-heart"></i> Wishlist <span *ngIf="wishlist.length">{{wishlist.length}}</span></li>
+        </a>
+        <a routerLink="/cart" (click)="handleClick('sidebarClick')" class="sidebar-options">
+          <li><i class="pi pi-cart-plus"></i> Cart <span *ngIf="cart.length>0">{{cart.length}}</span></li>
+        </a>
+        <a routerLink="/orders" (click)="handleClick('sidebarClick')" class="sidebar-options">
+          <li><i class="pi pi-tag"></i> Orders</li>
+        </a>
+        <a routerLink="/address" (click)="handleClick('sidebarClick')" class="sidebar-options">
+          <li><i class="pi pi-map-marker"></i> Address</li>
+        </a>
+        <a routerLink="/giftcard" (click)="handleClick('sidebarClick')" class="sidebar-options">
+          <li><i class="pi pi-gift"></i> Gift Card</li>
+        </a>
+        <a routerLink="/wallet" (click)="handleClick('sidebarClick')" class="sidebar-options">
+          <li><i class="pi pi-wallet"></i> Wallet</li>
+        </a>
+      </ul>
     </p-dialog>
-  </div> -->
+  </div>
 
 </div>

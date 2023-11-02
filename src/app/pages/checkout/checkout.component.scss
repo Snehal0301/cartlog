@@ -289,5 +289,36 @@
         }
       }
     }
+}
 
+@media screen and (max-width: 1024px) {
+  .checkout-container{
+    .accordian-wrapper{
+      .delivery-address-wrapper{
+        flex-direction: column;
+        .checkout-delivery-form{
+          width: 100%;
+        }
+      }
+      .saved-address-wrapper{
+        width: 100%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 425px) {
+  .checkout-container{
+    margin: 50px 2%;
+    .checkout-delivery-form{
+      .address-type{
+        .address-wrapper {
+          .address {
+            label{
+              font-size: 10px;
+            }
+          }
+        }
+      }
+    } 
+  }
 }

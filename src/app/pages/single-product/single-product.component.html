@@ -10,10 +10,8 @@
       <div
       class="wishlist-icon"
         (click)="handleFunction('wishlist')">
-        <!-- <span *ngIf="!singleProductData.isWishlisted">Wishlist</span>
-        <span *ngIf="singleProductData.isWishlisted">Wishlisted</span> -->
-        <i class='bx bx-heart' *ngIf="!singleProductData?.isWishlisted"></i>
-        <i class='bx bxs-heart' *ngIf="singleProductData?.isWishlisted"></i>
+        <i class='bx bx-heart' [style]="{'color':'red'}" *ngIf="!singleProductData?.isWishlisted"></i>
+        <i class='bx bxs-heart'[style]="{'color':'red'}" *ngIf="singleProductData?.isWishlisted"></i>
       </div>
     </div>
   </div>
@@ -63,7 +61,7 @@
   </div>
   <p-toast position="top-center" key="tc"></p-toast>
 
-  <p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false"
+  <p-dialog [(visible)]="visible" [modal]="true" [breakpoints]="{ '768px': '90vw' }" [style]="{ width: '50vw' }" [draggable]="false"
     [resizable]="false">
     <div class="share-header">
       <div class="main-header">

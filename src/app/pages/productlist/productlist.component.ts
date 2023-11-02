@@ -32,6 +32,7 @@ export class ProductlistComponent {
   selectedRating: number;
   isCleared: boolean = false;
   isPriceChanged: boolean = false;
+  isFilter: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -69,6 +70,25 @@ export class ProductlistComponent {
       }
     });
   }
+
+  position:
+    | 'center'
+    | 'top'
+    | 'bottom'
+    | 'left'
+    | 'right'
+    | 'topleft'
+    | 'topright'
+    | 'bottomleft'
+    | 'bottomright' = 'left';
+
+  rightsheetStyle: any = {
+    width: '500px',
+    height: '100vh',
+    maxHeight: '100vh',
+    margin: '0',
+    // paddingBottom: '80px',
+  };
 
   filterContent: {
     size: string[];
@@ -258,5 +278,9 @@ export class ProductlistComponent {
     } else if (type === 'rhigh') {
       this.sortRating('desc');
     } else return;
+  }
+
+  handleFilter(){
+    this.isFilter = true;
   }
 }

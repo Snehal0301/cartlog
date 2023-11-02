@@ -203,35 +203,74 @@ export class CartComponent {
     this.couponValue = coupon;
   }
 
-  handleZeroPayment():Promise<boolean> {
+  // handleZeroPayment(): Promise<boolean> {
+  //   this.isLoader = true;
+  //   return new Promise<boolean>((resolve, reject) => {
+  //     setTimeout(() => {
+  //       this.isLoader = false;
+  //       this.isZeroAmount = true;
+  //       setTimeout(() => {
+  //         this.isSuccess = true;
+  //         // this.cdr.detectChanges();
+  //         setTimeout(() => {
+  //           localStorage.removeItem('orderIDLS');
+  //           let updatedOrder = this.singleOrderData;
+  //           updatedOrder.status = 'Success';
+  //           this.editOrder(this.orderID, updatedOrder);
+  //           this.walletBalance = this.walletBalance - this.partialPayment;
+  //           let wallet = {
+  //             id: this.walletData.id,
+  //             value: this.walletBalance,
+  //           };
+  //           this.walletService.updateWallet(this.walletData.id, wallet);
+  //           this.isZeroAmount = false;
+  //           this.isSuccess = false;
+  //           this.router.navigate(['/placed', this.orderID]);
+  //           // resolve(true);
+  //         }, 3000);
+  //       }, 3000);
+  //     }, 2000);
+  //   });
+  // }
+
+  handleZeroPayment(): Promise<boolean> {
     this.isLoader = true;
-    return new Promise <boolean>((resolve, reject)=>{
-      setTimeout(() => {
+    return new Promise<boolean>(async (resolve, reject) => {
+      try {
+        await new Promise<void>((innerResolve) => setTimeout(innerResolve, 2000));
+  
         this.isLoader = false;
         this.isZeroAmount = true;
-        setTimeout(() => {
-          this.isSuccess = true;
-          this.cdr.detectChanges();
-        }, 3000);
-        setTimeout(()=>{
-          localStorage.removeItem('orderIDLS');
-          let updatedOrder = this.singleOrderData;
-          updatedOrder.status = 'Success';
-          this.editOrder(this.orderID, updatedOrder);
-          this.walletBalance = this.walletBalance - this.partialPayment;
-          let wallet = {
-            id:this.walletData.id,
-            value: this.walletBalance
-          }
-          this.walletService.updateWallet(this.walletData.id,wallet);
-          this.isZeroAmount = false;
-          this.isSuccess = false;
-          resolve(true);
-        },7000)
-      }, 2000);
-    })
+  
+        await new Promise<void>((innerResolve) => setTimeout(innerResolve, 3000));
+  
+        this.isSuccess = true;
+  
+        await new Promise<void>((innerResolve) => setTimeout(innerResolve, 3000));
+  
+        localStorage.removeItem('orderIDLS');
+        let updatedOrder = this.singleOrderData;
+        updatedOrder.status = 'Success';
+        await this.editOrder(this.orderID, updatedOrder);
+        this.walletBalance = this.walletBalance - this.partialPayment;
+        let wallet = {
+          id: this.walletData.id,
+          value: this.walletBalance,
+        };
+        await this.walletService.updateWallet(this.walletData.id, wallet);
+  
+        this.isZeroAmount = false;
+        this.isSuccess = false;
+  
+        this.router.navigate(['/placed', this.orderID]);
+        resolve(true);
+      } catch (error) {
+        reject(error);
+      }
+    });
   }
   
+
   handleCheckout() {
     if (this.fromCheckout) {
       this.singleOrderData.address = this.selectedAddress;
@@ -241,11 +280,7 @@ export class CartComponent {
       if (this.finalAmount > 0) {
         this.payNow();
       } else {
-        this.handleZeroPayment().then((response)=>{
-          if(response){
-            this.router.navigate(['/placed', this.orderID]);
-          }
-        });
+        this.handleZeroPayment()
       }
     } else {
       const summary = {

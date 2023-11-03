@@ -1,7 +1,7 @@
 <div class="checkout-container">
   <p class="checkout-title">Checkout</p>
   <div class="accordian-wrapper">
-    <p-accordion [multiple]="true" [activeIndex]="enableCheckout?[1]:[0]">
+    <p-accordion [multiple]="true" [activeIndex]="[0]">
       <p-accordionTab header="Delivery Address">
         <div class="delivery-address-wrapper">
           <form class="checkout-delivery-form" (ngSubmit)="submitForm()" [formGroup]="form">

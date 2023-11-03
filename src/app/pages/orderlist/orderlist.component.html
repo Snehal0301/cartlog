@@ -73,6 +73,7 @@
           <div class="flex">
             <p class="order-section-subitem">Date: {{singleOrder?.date}}</p>
             <p class="order-section-subitem">Order ID: {{singleOrder?.id}}</p>
+            <p class="order-section-subitem invoice"><a [routerLink]="'/placed/'+singleOrder?.id">Invoice</a></p>
           </div>
         </div>
         <div class="order-section-wrapper">
@@ -117,6 +118,10 @@
           <div class="order-subtotal-item">
             <p class="order-subtotal-field">Redeem Points</p>
             <p class="order-subtotal-value">₹{{singleOrder?.summary?.isChecked ? singleOrder?.summary?.redeemPoints: 0}}</p>
+          </div>
+          <div class="order-subtotal-item">
+            <p class="order-subtotal-field">Wallet</p>
+            <p class="order-subtotal-value">₹{{singleOrder?.summary?.useWallet ? singleOrder?.summary?.partialPayment: 0}}</p>
           </div>
           <div class="divider"></div>
           <div class="order-subtotal-item">

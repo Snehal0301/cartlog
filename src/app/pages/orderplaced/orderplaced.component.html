@@ -82,6 +82,10 @@
                 <p class="receipt-subtotal-value">Redeem Points</p>
                 <p class="receipt-subtotal-value">₹{{allReceiptData?.summary?.isChecked ? allReceiptData?.summary?.redeemPoints: 0}}</p>
               </div>
+              <div class="receipt-subtotal-item">
+                <p class="receipt-subtotal-value">Wallet</p>
+                <p class="receipt-subtotal-value">₹{{allReceiptData?.summary?.useWallet ? allReceiptData?.summary?.partialPayment: 0}}</p>
+              </div>
             </div>
           </div>
           <div class="receipt-order-total">

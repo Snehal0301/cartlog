@@ -89,6 +89,10 @@
           font-size: 16px;
           font-weight: 600;
         }
+        .invoice{
+          color: red;
+          cursor: pointer;
+        }
         .order-section-title{
           font-size: 18px;
           font-weight: 700;
@@ -97,6 +101,7 @@
         .flex{
           display: flex;
           align-items: center;
+          justify-content: space-between;
           gap: 10px;
         }
         .order-address-wrapper{
